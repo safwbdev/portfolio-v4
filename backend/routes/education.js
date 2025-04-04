@@ -13,7 +13,7 @@ EducationRouter.put('/:id', updateEducation);
 EducationRouter.delete('/:id', deleteEducation);
 
 // get by id
-EducationRouter.get('/find/:id', getEducation);
+EducationRouter.get('/:id', getEducation);
 
 // get all
 EducationRouter.get('/', getAllEducations);

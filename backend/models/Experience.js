@@ -19,11 +19,11 @@ const ExperienceSchema = new mongoose.Schema({
     },
     yearStart: {
         type: String,
-        default: 'NA',
+        required: true,
     },
     yearEnd: {
         type: String,
-        default: 'present',
+        required: true,
     },
     img: {
         type: String,

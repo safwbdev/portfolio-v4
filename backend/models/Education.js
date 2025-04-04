@@ -15,6 +15,7 @@ const EducationSchema = new mongoose.Schema({
     },
     img: {
         type: String,
+        default: null,
     },
 }, { timestamps: true })
 

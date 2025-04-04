@@ -93,11 +93,6 @@ export const roomColumns = [
     },
 ];
 export const skillColumns = [
-    // {
-    //     field: "_id",
-    //     headerName: "ID",
-    //     width: 250
-    // },
     {
         field: "name",
         headerName: "Name",
@@ -133,13 +128,13 @@ export const experienceColumns = [
         width: 150,
     },
     {
-        field: "Start",
-        headerName: "yearStart",
+        field: "yearStart",
+        headerName: "Start",
         width: 150,
     },
     {
         field: "yearEnd",
-        headerName: "yearStart",
+        headerName: "End",
         width: 150,
     },
 ];
@@ -157,6 +152,33 @@ export const educationColumns = [
     {
         field: "location",
         headerName: "Location",
+        width: 150,
+    },
+];
+export const projectColumns = [
+    {
+        field: "title",
+        headerName: "Title",
+        width: 150,
+    },
+    {
+        field: "desc",
+        headerName: "Desc",
+        width: 150,
+    },
+    {
+        field: "github",
+        headerName: "Github Link",
+        width: 150,
+    },
+    {
+        field: "demo",
+        headerName: "Demo Link",
+        width: 150,
+    },
+    {
+        field: "type",
+        headerName: "Type",
         width: 150,
     },
 ];

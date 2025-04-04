@@ -8,10 +8,9 @@ import Home from './pages/home/Home'
 import Login from './pages/login/Login'
 import List from './pages/list/List'
 import Single from './pages/single/Single'
-
 import { ToastContainer } from 'react-toastify';
-import { BY_ID, EDIT, EDUCATION, EXPERIENCE, LOGIN, NEW, PROJECTS, ROOT, SKILLS, USERS } from './routes';
-import { educationColumns, experienceColumns, hotelColumns, roomColumns, skillColumns } from './datatablesource';
+import { BY_ID, EDIT_BY_ID, EDUCATION, EXPERIENCE, LOGIN, NEW, PROJECTS, ROOT, SKILLS, USERS } from './routes';
+import { educationColumns, experienceColumns, projectColumns, skillColumns } from './datatablesource';
 import Edit from './pages/edit/Edit';
 import NewSkill from './pages/newSkill/NewSkill';
 function App() {
@@ -39,7 +38,6 @@ function App() {
             <Route path={USERS}>
               <Route index element={
                 <ProtectedRoute>
-                  {/* <List columns={userColumns} /> */}
                   <Single />
                 </ProtectedRoute>}>
               </Route>
@@ -48,7 +46,7 @@ function App() {
                   <Single />
                 </ProtectedRoute>
               } />
-              <Route path={`${EDIT}/${BY_ID}`} element={
+              <Route path={`${EDIT_BY_ID}`} element={
                 <ProtectedRoute>
                   <Edit />
                 </ProtectedRoute>
@@ -70,7 +68,7 @@ function App() {
                   <NewSkill />
                 </ProtectedRoute>
               } />
-              <Route path={`${EDIT}/${BY_ID}`} element={
+              <Route path={`${EDIT_BY_ID}`} element={
                 <ProtectedRoute>
                   <Edit />
                 </ProtectedRoute>
@@ -79,7 +77,7 @@ function App() {
             <Route path={PROJECTS}>
               <Route index element={
                 <ProtectedRoute>
-                  <List columns={roomColumns} />
+                  <List columns={projectColumns} />
                 </ProtectedRoute>}>
               </Route>
               <Route path={BY_ID} element={
@@ -87,7 +85,7 @@ function App() {
                   <Single />
                 </ProtectedRoute>
               } />
-              <Route path={`${EDIT}/${BY_ID}`} element={
+              <Route path={`${EDIT_BY_ID}`} element={
                 <ProtectedRoute>
                   <Edit />
                 </ProtectedRoute>
@@ -109,7 +107,7 @@ function App() {
                   <Single />
                 </ProtectedRoute>
               } />
-              <Route path={`${EDIT}/${BY_ID}`} element={
+              <Route path={`${EDIT_BY_ID}`} element={
                 <ProtectedRoute>
                   <Edit />
                 </ProtectedRoute>
@@ -131,7 +129,7 @@ function App() {
                   <Single />
                 </ProtectedRoute>
               } />
-              <Route path={`${EDIT}/${BY_ID}`} element={
+              <Route path={`${EDIT_BY_ID}`} element={
                 <ProtectedRoute>
                   <Edit />
                 </ProtectedRoute>

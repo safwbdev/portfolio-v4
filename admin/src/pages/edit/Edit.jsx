@@ -2,10 +2,6 @@ import React, { useEffect, useState } from 'react'
 import classes from './Edit.module.scss'
 import useFetch from '../../hooks/useFetch'
 import { API_URL, IMG_UPLOAD_PATH } from '../../routes'
-import {
-    userInputs,
-    roomInputs
-} from '../../editFormSource'
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
@@ -20,12 +16,13 @@ import {
     Grid,
     TextField,
 } from '@mui/material';
-import { skillInputs } from '../../formSource';
+import useDataType from '../../hooks/useDataType'
 
 const Edit = () => {
     const path = location.pathname.split("/")[1];
     const id = location.pathname.split("/")[3];
     const { data, loading } = useFetch(`${API_URL}/${path}/${id}`);
+    const { inputData } = useDataType(path);
     const requiresImage = path === 'users' || path === 'hotels';
 
     const [info, setInfo] = useState({});
@@ -41,24 +38,6 @@ const Edit = () => {
         setInfo(prev => ({ ...prev, [e.target.id]: e.target.value }))
     }
 
-
-    const getDataType = () => {
-        switch (path) {
-            case 'users':
-                return userInputs;
-            case 'skills':
-                return skillInputs;
-            case 'projects':
-                return userInputs;
-            case 'experience':
-                return roomInputs;
-            case 'education':
-                return roomInputs;
-            default:
-                return null;
-        }
-    }
-
     const handleClick = async () => {
         const updatedData = { ...info };
 
@@ -72,24 +51,22 @@ const Edit = () => {
         }
     }
 
-    const displayData = (array) => array.map((input) => {
-        console.log(input.id);
-        console.log(input.id);
-        return (
-            <Grid size={{ xs: 12, sm: 6 }} key={input.id} >
-                <TextField
-                    id={input.id}
-                    label={input.label || ''}
-                    variant="outlined"
-                    placeholder={data[input.label]}
-                    value={info[input.id]}
-                    onChange={handleChange}
-                    fullWidth
-                    type={input.type}
-                    disabled={input.id === 'username'} />
-            </Grid>
-        )
-    })
+    const DisplayData = () => inputData.map((input) => (
+        <Grid size={{ xs: 12, sm: 6 }} key={input.id} >
+            <TextField
+                id={input.id}
+                label={input.label || ''}
+                variant="outlined"
+                placeholder={data[input.label]}
+                value={info[input.id]}
+                onChange={handleChange}
+                fullWidth
+                type={input.type}
+                disabled={input.id === 'username'} />
+        </Grid>
+    )
+    )
+
 
 
     return loading ? (<CircularProgress />) : (
@@ -100,7 +77,7 @@ const Edit = () => {
                     <form>
                         <CardContent>
                             <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }} >
-                                {displayData(getDataType())}
+                                <DisplayData />
                             </Grid>
                         </CardContent>
                         <CardActions>

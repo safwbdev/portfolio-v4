@@ -13,7 +13,7 @@ ProjectRouter.put('/:id', updateProject);
 ProjectRouter.delete('/:id', deleteProject);
 
 // get by id
-ProjectRouter.get('/find/:id', getProject);
+ProjectRouter.get('/:id', getProject);
 
 // get all
 ProjectRouter.get('/', getAllProjects);

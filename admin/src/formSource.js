@@ -139,3 +139,93 @@ export const skillInputs = [
         placeholder: "eg. Soft Skills",
     },
 ];
+export const projectInputs = [
+    {
+        id: "title",
+        label: "Title",
+        type: "text",
+        placeholder: "Project Title",
+    },
+    {
+        id: "desc",
+        label: "Desc",
+        type: "text",
+        placeholder: "Project Description",
+    },
+    {
+        id: "github",
+        label: "Github",
+        type: "text",
+        placeholder: "Github URL",
+    },
+    {
+        id: "demo",
+        label: "Demo",
+        type: "text",
+        placeholder: "Demo URL",
+    },
+    {
+        id: "type",
+        label: "Type",
+        type: "text",
+        placeholder: "Project Type",
+    },
+];
+
+export const educationInputs = [
+    {
+        id: "title",
+        label: "Title",
+        type: "text",
+        placeholder: "eg. Bachelors of Science",
+    },
+    {
+        id: "school",
+        label: "School",
+        type: "text",
+        placeholder: "Name of School/University",
+    },
+    {
+        id: "location",
+        label: "Location",
+        type: "string",
+        placeholder: "eg. USA",
+    },
+]
+
+export const experienceInputs = [
+    {
+        id: "position",
+        label: "Position/Designation",
+        type: "text",
+        placeholder: "eg. Manager",
+    },
+    {
+        id: "company",
+        label: "Company Name",
+        type: "text",
+        placeholder: "eg. Corp inc.",
+    },
+    {
+        id: "location",
+        label: "Location",
+        type: "string",
+        placeholder: "eg. USA",
+    },
+    {
+        id: "desc",
+        label: "Desc",
+        type: "string",
+        placeholder: "Role description",
+    },
+    {
+        id: "yearStart",
+        label: "Starting Year",
+        type: "string",
+    },
+    {
+        id: "yearEnd",
+        label: "Ending Year",
+        type: "string",
+    },
+]

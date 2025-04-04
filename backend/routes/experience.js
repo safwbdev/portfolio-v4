@@ -13,7 +13,7 @@ ExperienceRouter.put('/:id', updateExperience);
 ExperienceRouter.delete('/:id', deleteExperience);
 
 // get by id
-ExperienceRouter.get('/find/:id', getExperience);
+ExperienceRouter.get('/:id', getExperience);
 
 // get all
 ExperienceRouter.get('/', getAllExperiences);

@@ -4,6 +4,7 @@ const ProjectSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
+        unique: true
     },
     desc: {
         type: String,
@@ -11,6 +12,7 @@ const ProjectSchema = new mongoose.Schema({
     },
     stack: {
         type: [String],
+        default: [],
     },
     github: {
         type: String,
@@ -22,9 +24,11 @@ const ProjectSchema = new mongoose.Schema({
     },
     type: {
         type: String,
+        default: null,
     },
     img: {
         type: [String],
+        default: [],
     },
     featured: {
         type: Boolean,

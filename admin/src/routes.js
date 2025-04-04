@@ -20,6 +20,7 @@ export const LOGIN = `login`;
 export const USERS = `users`;
 export const BY_ID = `:userId`;
 export const EDIT = `edit`;
+export const EDIT_BY_ID = `edit/:userId`;
 export const NEW = `new`;
 export const SKILLS = `skills`;
 export const PROJECTS = `projects`;

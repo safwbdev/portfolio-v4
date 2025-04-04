@@ -14,11 +14,9 @@ import {
     Grid,
     CardHeader
 } from '@mui/material';
-import {
-    hotelInputs,
-    userInputs,
-    roomInputs
-} from '../../editFormSource'
+import useDataType from '../../hooks/useDataType';
+
+// import { educationInputs, projectInputs } from '../../formSource';
 
 const Single = () => {
 
@@ -28,7 +26,8 @@ const Single = () => {
     const [defaultImg, setdefaultImg] = useState("https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg");
     const [files, setFiles] = useState();
 
-    const { data, loading } = useFetch(`${API_URL}/${path === 'hotels' ? 'hotels/find' : path}/${id}`);
+    const { data, loading } = useFetch(`${API_URL}/${path}/${id}`);
+    const { inputData } = useDataType(path);
 
     useEffect(() => {
         if (path === 'users') {
@@ -40,27 +39,14 @@ const Single = () => {
         }
     }, [data])
 
-    const getDataType = () => {
-        switch (path) {
-            case 'hotels':
-                return hotelInputs;
-            case 'users':
-                return userInputs;
-            case 'rooms':
-                return roomInputs;
-            default:
-                return null;
-        }
-    }
-    const displayData = (array) => {
-        return array.map((arr) => (
-            <div className={classes.descText} key={arr.id}>
-                <span>
-                    {arr.label}:
-                </span>
-                {data[arr.id] || 'NA'}</div>
-        ))
-    }
+    const DisplayData = () => inputData.map((arr) => (
+        <div className={classes.descText} key={arr.id}>
+            <span>
+                {arr.label}:
+            </span>
+            {data[arr.id] || 'NA'}</div>
+    ))
+
 
     return loading ? (<CircularProgress />) : (
         <Grid
@@ -88,7 +74,7 @@ const Single = () => {
                         >
                             {path === 'users' ? data.isAdmin ? 'Admin' : 'General User' : ''}
                         </Typography>
-                        {displayData(getDataType())}
+                        <DisplayData />
                     </CardContent>
                 </Box>
             </Card>
