@@ -1,19 +1,16 @@
 import React, { useState } from 'react'
 import classes from './NewSkill.module.scss'
-import { roomInputs, skillInputs } from '../../formSource';
-import useFetch from '../../hooks/useFetch';
+import { skillInputs } from '../../formSource';
 import axios from 'axios';
-import { HOTEL_PATH, ROOM_PATH } from '../../routes';
+import { API_URL, } from '../../routes';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import { Button, Card, CardActions, CardContent, CardHeader, FormControl, Grid, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import { Button, Card, CardActions, CardContent, CardHeader, Grid, TextField } from '@mui/material';
 
 const NewSkill = () => {
     const [info, setInfo] = useState({});
-    const [hotelId, setHotelId] = useState(undefined);
-    const [rooms, setRooms] = useState([]);
-    const { data, loading, error } = useFetch(HOTEL_PATH);
     const navigate = useNavigate();
+    const path = location.pathname.split("/")[1];
 
     const handleChange = (e) => {
         setInfo(prev => ({ ...prev, [e.target.id]: e.target.value }))
@@ -21,22 +18,15 @@ const NewSkill = () => {
 
     const handleClick = async (e) => {
         e.preventDefault();
-        const roomNumbers = rooms.split(",").map((room) => ({ number: room }));
         try {
-            await axios.post(`${ROOM_PATH}/${hotelId}`, { ...info, roomNumbers })
-            toast.success(`Room has been created!`);
-            navigate(`/rooms`);
+            await axios.post(`${API_URL}/${path}`, { ...info })
+            toast.success(`Skill has been created!`);
+            navigate(`/skills`);
         } catch (err) {
             console.log(err);
 
         }
     }
-
-    const handleSelect = (e) => {
-        e.preventDefault();
-        setHotelId(e.target.value)
-    }
-
 
     return (
         <Grid container justify="center" spacing={1}>
@@ -52,8 +42,7 @@ const NewSkill = () => {
                                             id={input.id}
                                             label={input.label || ''}
                                             variant="outlined"
-                                            placeholder={data[input.label]}
-                                            value={info[input.id]}
+                                            placeholder={input.placeholder}
                                             onChange={handleChange}
                                             fullWidth
                                             type={input.type} />

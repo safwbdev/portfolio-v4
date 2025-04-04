@@ -25,7 +25,7 @@ import { skillInputs } from '../../formSource';
 const Edit = () => {
     const path = location.pathname.split("/")[1];
     const id = location.pathname.split("/")[3];
-    const { data, loading } = useFetch(`http://localhost:8800/api/${path}/${id}`);
+    const { data, loading } = useFetch(`${API_URL}/${path}/${id}`);
     const requiresImage = path === 'users' || path === 'hotels';
 
     const [info, setInfo] = useState({});
@@ -63,7 +63,7 @@ const Edit = () => {
         const updatedData = { ...info };
 
         try {
-            await axios.put(`http://localhost:8800/api/${path}/${id}`, updatedData);
+            await axios.put(`${API_URL}/${path}/${id}`, updatedData);
             const getType = path[0].toUpperCase() + path.slice(1);
             toast.success(`${getType.slice(0, -1)} has been updated!`);
             navigate(`/${path}`)

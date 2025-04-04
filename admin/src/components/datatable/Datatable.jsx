@@ -3,23 +3,17 @@ import { DataGrid } from "@mui/x-data-grid";
 import classes from './Datatable.module.scss'
 import { Link, useLocation, } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch.jsx';
-import axios from 'axios';
 import { API_URL, EDIT } from '../../routes.js';
-import { toast } from 'react-toastify';
 import { Button, Grid, Typography } from '@mui/material';
-// import LoadingComponent from '../loadingComponent/LoadingComponent.jsx';
+import { toast } from 'react-toastify';
+import axios from 'axios';
 
 
 const Datatable = ({ columns }) => {
     const [list, setList] = useState([]);
     const location = useLocation();
     const path = location.pathname.split("/")[1];
-    // console.log(`${API_URL}/${path}`);
-
-    const { data, loading, error, reFetch } = useFetch(`http://localhost:8800/api/${path}`);
-    // const { data, loading, error, reFetch } = useFetch(`${API_URL} / ${path}`);
-    // const { data: hotelData } = useFetch(`${ API_URL } / hotels`);
-    console.log(data);
+    const { data, loading, error, reFetch } = useFetch(`${API_URL}/${path}`);
 
     useEffect(() => {
         setList(data);
@@ -31,29 +25,16 @@ const Datatable = ({ columns }) => {
 
 
 
-    const getHotelIdByRoom = (roomId) => {
-        let hotelID = null;
-        hotelData.map(hd => {
-            if (hd.rooms.includes(roomId)) {
-                hotelID = hd._id
-            }
-        })
-        return hotelID;
-    }
-
     const handleDelete = async (id) => {
         if (confirm("Are you sure you want to delete this entry?")) {
-            // const getType = path[0].toUpperCase() + path.slice(1);
-            // const hotelId = path === 'rooms' ? getHotelIdByRoom(id) : null;
-            // try {
-            //     const deleteDefaultURI = `${path} / ${id}`
-            //     const deleteRoomURI = `rooms / ${id} / ${hotelId}`;
-            //     await axios.delete(`${API_URL} / ${path === 'rooms' ? deleteRoomURI : deleteDefaultURI}`)
-            //     setList(list.filter((item) => item._id !== id));
-            //     toast.error(`${getType.slice(0, -1)} has been deleted!`)
-            // } catch (err) {
-            //     console.log(err);
-            // }
+            const getType = path[0].toUpperCase() + path.slice(1);
+            try {
+                await axios.delete(`${API_URL}/${path}/${id}`)
+                setList(list.filter((item) => item._id !== id));
+                toast.error(`${getType.slice(0, -1)} has been deleted!`)
+            } catch (err) {
+                console.log(err);
+            }
         }
     };
 
