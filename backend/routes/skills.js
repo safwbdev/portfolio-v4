@@ -13,7 +13,7 @@ SkillsRouter.put('/:id', updateSkill);
 SkillsRouter.delete('/:id', deleteSkill);
 
 // get by id
-SkillsRouter.get('/find/:id', getSkill);
+SkillsRouter.get('/:id', getSkill);
 
 // get all
 SkillsRouter.get('/', getAllSkills);
