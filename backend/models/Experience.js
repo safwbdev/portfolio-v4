@@ -21,7 +21,7 @@ const ExperienceSchema = new mongoose.Schema({
         type: String,
         default: 'NA',
     },
-    yearStart: {
+    yearEnd: {
         type: String,
         default: 'present',
     },

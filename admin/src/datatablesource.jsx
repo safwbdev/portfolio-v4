@@ -110,3 +110,53 @@ export const skillColumns = [
     },
 
 ];
+
+export const experienceColumns = [
+    {
+        field: "company",
+        headerName: "Company",
+        width: 150,
+    },
+    {
+        field: "position",
+        headerName: "Position",
+        width: 150,
+    },
+    {
+        field: "location",
+        headerName: "Location",
+        width: 150,
+    },
+    {
+        field: "desc",
+        headerName: "Desc",
+        width: 150,
+    },
+    {
+        field: "Start",
+        headerName: "yearStart",
+        width: 150,
+    },
+    {
+        field: "yearEnd",
+        headerName: "yearStart",
+        width: 150,
+    },
+];
+export const educationColumns = [
+    {
+        field: "title",
+        headerName: "Title",
+        width: 150,
+    },
+    {
+        field: "school",
+        headerName: "School",
+        width: 150,
+    },
+    {
+        field: "location",
+        headerName: "Location",
+        width: 150,
+    },
+];

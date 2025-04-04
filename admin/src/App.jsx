@@ -11,7 +11,7 @@ import Single from './pages/single/Single'
 
 import { ToastContainer } from 'react-toastify';
 import { BY_ID, EDIT, EDUCATION, EXPERIENCE, LOGIN, NEW, PROJECTS, ROOT, SKILLS, USERS } from './routes';
-import { hotelColumns, roomColumns, skillColumns } from './datatablesource';
+import { educationColumns, experienceColumns, hotelColumns, roomColumns, skillColumns } from './datatablesource';
 import Edit from './pages/edit/Edit';
 import NewSkill from './pages/newSkill/NewSkill';
 function App() {
@@ -101,7 +101,7 @@ function App() {
             <Route path={EXPERIENCE}>
               <Route index element={
                 <ProtectedRoute>
-                  <List columns={roomColumns} />
+                  <List columns={experienceColumns} />
                 </ProtectedRoute>}>
               </Route>
               <Route path={BY_ID} element={
@@ -123,7 +123,7 @@ function App() {
             <Route path={EDUCATION}>
               <Route index element={
                 <ProtectedRoute>
-                  <List columns={roomColumns} />
+                  <List columns={educationColumns} />
                 </ProtectedRoute>}>
               </Route>
               <Route path={BY_ID} element={
