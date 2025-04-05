@@ -1,10 +1,12 @@
 import React from 'react'
 import useFetch from '../../hooks/useFetch';
 import { API_URL } from '../../routes';
-
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
+import {
+    Card,
+    CardContent,
+    Stack,
+    Typography,
+} from '@mui/material';
 
 const EducationComponent = () => {
     const { data, loading } = useFetch(`${API_URL}/education`);
@@ -12,7 +14,7 @@ const EducationComponent = () => {
     return loading ? (<h2>Loading...</h2>) : (
         <div className={'educationContainer'}>
             <h4>Education</h4>
-            <div className='education'>
+            <Stack direction="row" spacing={1}>
                 {data.map((edu) => (
                     <Card key={edu._id}>
                         <CardContent>
@@ -29,7 +31,7 @@ const EducationComponent = () => {
                         </CardContent>
                     </Card>
                 ))}
-            </div>
+            </Stack>
         </div>
     )
 }

@@ -30,7 +30,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         default: 'github to be added',
     },
-    webstie: {
+    website: {
         type: String,
         default: 'website to be added',
     },

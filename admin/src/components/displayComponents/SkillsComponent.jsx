@@ -1,8 +1,7 @@
 import React from 'react'
 import useFetch from '../../hooks/useFetch';
 import { API_URL } from '../../routes';
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
+import { Chip, Stack } from '@mui/material';
 
 const SkillsComponent = () => {
     const { data, loading } = useFetch(`${API_URL}/skills`);

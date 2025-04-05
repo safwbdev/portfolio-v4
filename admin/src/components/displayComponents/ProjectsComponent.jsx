@@ -1,11 +1,12 @@
 import React from 'react'
 import useFetch from '../../hooks/useFetch';
 import { API_URL } from '../../routes';
-
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import { Stack } from '@mui/material';
+import {
+    Card,
+    CardContent,
+    Stack,
+    Typography,
+} from '@mui/material';
 
 const ProjectsComponent = () => {
     const { data, loading } = useFetch(`${API_URL}/projects`);

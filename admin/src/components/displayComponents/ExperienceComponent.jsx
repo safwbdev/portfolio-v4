@@ -1,10 +1,12 @@
 import React from 'react'
 import useFetch from '../../hooks/useFetch';
 import { API_URL } from '../../routes';
-
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
+import {
+    Card,
+    CardContent,
+    Stack,
+    Typography,
+} from '@mui/material';
 
 const ExperienceComponent = () => {
     const { data, loading } = useFetch(`${API_URL}/experience`);
@@ -12,7 +14,7 @@ const ExperienceComponent = () => {
     return loading ? (<h2>Loading...</h2>) : (
         <div className={'experienceContainer'}>
             <h4>Experience</h4>
-            <div className='experience'>
+            <Stack direction="row" spacing={1}>
                 {data.map((exp) => (
                     <Card key={exp._id}>
                         <CardContent>
@@ -29,7 +31,7 @@ const ExperienceComponent = () => {
                         </CardContent>
                     </Card>
                 ))}
-            </div>
+            </Stack>
         </div>
     )
 }
