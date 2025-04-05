@@ -1,13 +1,7 @@
 export const userInputs = [
     {
-        id: "username",
-        label: "Username",
-        type: "text",
-        placeholder: "john_doe",
-    },
-    {
-        id: "name",
-        label: "Name and surname",
+        id: "fullName",
+        label: "Full Name",
         type: "text",
         placeholder: "John Doe",
     },
@@ -24,27 +18,46 @@ export const userInputs = [
         placeholder: "+1 234 567 89",
     },
     {
-        id: "password",
-        label: "Password",
-        type: "password",
-    },
-    {
-        id: "address",
-        label: "Address",
+        id: "location",
+        label: "Location",
         type: "text",
         placeholder: "Elton St. 216 NewYork",
     },
     {
-        id: "country",
-        label: "Country",
+        id: "designation",
+        label: "Designation",
         type: "text",
-        placeholder: "USA",
+        placeholder: "Developer",
     },
     {
-        id: "city",
-        label: "City",
+        id: "website",
+        label: "Website",
         type: "text",
-        placeholder: "New York",
+        placeholder: "Site URL",
+    },
+    {
+        id: "linkedin",
+        label: "Linkedin",
+        type: "text",
+        placeholder: "linkedn URL",
+    },
+    {
+        id: "github",
+        label: "Github",
+        type: "text",
+        placeholder: "github URL",
+    },
+    {
+        id: "desc",
+        label: "Desc",
+        type: "text",
+        placeholder: "Description",
+    },
+    {
+        id: "tagline",
+        label: "Tagline",
+        type: "text",
+        placeholder: "Tagline text",
     },
 ];
 

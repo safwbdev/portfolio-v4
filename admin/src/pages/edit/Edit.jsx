@@ -23,7 +23,7 @@ const Edit = () => {
     const id = location.pathname.split("/")[3];
     const { data, loading } = useFetch(`${API_URL}/${path}/${id}`);
     const { inputData } = useDataType(path);
-    const requiresImage = path === 'users' || path === 'hotels';
+    const requiresImage = path === 'users';
 
     const [info, setInfo] = useState({});
     const [file, setFile] = useState("");
@@ -51,23 +51,6 @@ const Edit = () => {
         }
     }
 
-    const DisplayData = () => inputData.map((input) => (
-        <Grid size={{ xs: 12, sm: 6 }} key={input.id} >
-            <TextField
-                id={input.id}
-                label={input.label || ''}
-                variant="outlined"
-                placeholder={data[input.label]}
-                value={info[input.id]}
-                onChange={handleChange}
-                fullWidth
-                type={input.type}
-                disabled={input.id === 'username'} />
-        </Grid>
-    )
-    )
-
-
 
     return loading ? (<CircularProgress />) : (
         <Grid container justify="center" spacing={1}>
@@ -77,7 +60,17 @@ const Edit = () => {
                     <form>
                         <CardContent>
                             <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }} >
-                                <DisplayData />
+                                {inputData.map((input) => (<Grid size={{ xs: 12, sm: 6 }} key={input.id} >
+                                    <TextField
+                                        id={input.id}
+                                        label={input.label || ''}
+                                        variant="outlined"
+                                        placeholder={data[input.label]}
+                                        value={info[input.id]}
+                                        onChange={handleChange}
+                                        fullWidth
+                                        type={input.type} />
+                                </Grid>))}
                             </Grid>
                         </CardContent>
                         <CardActions>

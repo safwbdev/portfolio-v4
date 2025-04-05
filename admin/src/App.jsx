@@ -13,7 +13,7 @@ import { BY_ID, EDIT_BY_ID, EDUCATION, EXPERIENCE, LOGIN, NEW, PROJECTS, ROOT, S
 import { educationColumns, experienceColumns, projectColumns, skillColumns } from './datatablesource';
 import Edit from './pages/edit/Edit';
 import New from './pages/new/New';
-import ProfileComponent from './components/displayComponents/ProfileComponent';
+import Profile from './pages/profile/Profile';
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
@@ -39,8 +39,7 @@ function App() {
             <Route path={USERS}>
               <Route index element={
                 <ProtectedRoute>
-                  {/* <Single /> */}
-                  <ProfileComponent />
+                  <Profile />
                 </ProtectedRoute>}>
               </Route>
               <Route path={BY_ID} element={

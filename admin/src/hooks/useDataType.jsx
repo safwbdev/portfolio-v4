@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from 'axios';
-import { projectInputs, skillInputs, educationInputs, experienceInputs } from "../formSource";
+import { projectInputs, skillInputs, educationInputs, experienceInputs, userInputs } from "../formSource";
 
 const useDataType = (type) => {
     const [inputData, setInputData] = useState([]);
