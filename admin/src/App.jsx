@@ -12,7 +12,7 @@ import { ToastContainer } from 'react-toastify';
 import { BY_ID, EDIT_BY_ID, EDUCATION, EXPERIENCE, LOGIN, NEW, PROJECTS, ROOT, SKILLS, USERS } from './routes';
 import { educationColumns, experienceColumns, projectColumns, skillColumns } from './datatablesource';
 import Edit from './pages/edit/Edit';
-import NewSkill from './pages/newSkill/NewSkill';
+import New from './pages/new/New';
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
@@ -65,7 +65,7 @@ function App() {
               } />
               <Route path={NEW} element={
                 <ProtectedRoute>
-                  <NewSkill />
+                  <New />
                 </ProtectedRoute>
               } />
               <Route path={`${EDIT_BY_ID}`} element={
@@ -92,7 +92,7 @@ function App() {
               } />
               <Route path={NEW} element={
                 <ProtectedRoute>
-                  <NEW />
+                  <New />
                 </ProtectedRoute>
               } />
             </Route>
@@ -114,7 +114,7 @@ function App() {
               } />
               <Route path={NEW} element={
                 <ProtectedRoute>
-                  <NEW />
+                  <New />
                 </ProtectedRoute>
               } />
             </Route>
@@ -136,7 +136,7 @@ function App() {
               } />
               <Route path={NEW} element={
                 <ProtectedRoute>
-                  <NEW />
+                  <New />
                 </ProtectedRoute>
               } />
             </Route>

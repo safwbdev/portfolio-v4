@@ -5,6 +5,7 @@ import { API_URL } from '../../routes';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import { Stack } from '@mui/material';
 
 const ProjectsComponent = () => {
     const { data, loading } = useFetch(`${API_URL}/projects`);
@@ -12,7 +13,7 @@ const ProjectsComponent = () => {
     return loading ? (<h2>Loading...</h2>) : (
         <div className={'projectsContainer'}>
             <h4>Projects</h4>
-            <div className='projects'>
+            <Stack direction="row" spacing={1}>
                 {data.map((proj) => (
                     <Card key={proj._id}>
                         <CardContent>
@@ -29,7 +30,7 @@ const ProjectsComponent = () => {
                         </CardContent>
                     </Card>
                 ))}
-            </div>
+            </Stack>
         </div>
     )
 }
