@@ -36,18 +36,15 @@ const Edit = () => {
         setInfo(data);
     }, [data])
 
-    // useEffect(() => {
-    //     if (!requiresImage) return;
-    //     let getImg = null;
-    //     if (path !== 'skills' && info) {
-    //         setdefaultImg(info.img);
-    //         // if (path === 'projects' && info.img && info.img.length > 0) {
-    //         //     console.log('lollo', info.img);
-    //         //     setdefaultImg(info.img);
-    //         // }
-    //     }
-    // }, [info])
-    console.log(defaultImg);
+    useEffect(() => {
+        if (!requiresImage) return;
+        if (path !== 'skills' && info) {
+            setdefaultImg(info.img);
+            if (path === 'projects' && info.img && info.img.length > 0) {
+                setdefaultImg(info.img);
+            }
+        }
+    }, [info])
 
 
     const handleChange = (e) => {
@@ -55,10 +52,33 @@ const Edit = () => {
     }
 
     const handleClick = async () => {
-        const updatedData = { ...info };
+        let updatedData = {};
+        if (file) {
+            console.log('upload img');
+
+            const data = new FormData();
+            data.append("file", file);
+            data.append("upload_preset", "upload");
+            try {
+                const uploadRes = await axios.post(IMG_UPLOAD_PATH, data);
+                const { url } = uploadRes.data;
+                console.log(url);
+
+                updatedData = { ...info, img: url };
+            } catch (err) {
+                console.log(err);
+
+            }
+
+        } else {
+            console.log('NOPE');
+            updatedData = { ...info };
+        }
 
         try {
             await axios.put(`${API_URL}/${path}/${id}`, updatedData);
+            console.log('updatedData:', updatedData);
+
             const getType = path[0].toUpperCase() + path.slice(1);
             toast.success(`${getType.slice(0, -1)} has been updated!`);
             navigate(`/${path}`)
@@ -94,6 +114,7 @@ const Edit = () => {
                                         style={{ display: "none" }}
                                     />
                                 </>}
+                                // FIXME: ICON BUG HERE
                                 avatar={
                                     <Avatar alt="image" src={file ? URL.createObjectURL(file) : defaultImg}
                                         variant="square"

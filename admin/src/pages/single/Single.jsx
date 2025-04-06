@@ -30,7 +30,7 @@ const Single = () => {
     const { inputData } = useDataType(path);
 
     useEffect(() => {
-        if (path === 'users') {
+        if (path !== 'users' && data.img && data.img.length !== 0) {
             setdefaultImg(data.img);
         }
         if (path === 'hotels' && data.photos && data.photos.length > 0) {
