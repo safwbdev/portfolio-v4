@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import classes from './New.module.scss'
 import axios from 'axios';
-import { API_URL, } from '../../routes';
+import { API_URL, IMG_UPLOAD_PATH, } from '../../routes';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { Button, Card, CardActions, CardContent, CardHeader, Grid, TextField, Avatar } from '@mui/material';
@@ -23,8 +23,23 @@ const New = () => {
 
     const handleClick = async (e) => {
         e.preventDefault();
+        let newData = {};
+        if (file) {
+            const data = new FormData();
+            data.append("file", file);
+            data.append("upload_preset", "upload");
+            try {
+                const uploadRes = await axios.post(IMG_UPLOAD_PATH, data);
+                const { url } = uploadRes.data;
+                newData = { ...info, img: url };
+            } catch (err) {
+                console.log(err);
+            }
+        } else {
+            newData = { ...info };
+        }
         try {
-            await axios.post(`${API_URL}/${path}`, { ...info })
+            await axios.post(`${API_URL}/${path}`, newData)
             toast.success(`New Entry has been created!`);
             navigate(`/${path}`);
         } catch (err) {

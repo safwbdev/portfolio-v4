@@ -54,16 +54,12 @@ const Edit = () => {
     const handleClick = async () => {
         let updatedData = {};
         if (file) {
-            console.log('upload img');
-
             const data = new FormData();
             data.append("file", file);
             data.append("upload_preset", "upload");
             try {
                 const uploadRes = await axios.post(IMG_UPLOAD_PATH, data);
                 const { url } = uploadRes.data;
-                console.log(url);
-
                 updatedData = { ...info, img: url };
             } catch (err) {
                 console.log(err);
@@ -71,7 +67,6 @@ const Edit = () => {
             }
 
         } else {
-            console.log('NOPE');
             updatedData = { ...info };
         }
 
