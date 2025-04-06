@@ -9,7 +9,7 @@ import {
     CardMedia,
     Button,
     Typography,
-} from '@mui/material/Card';
+} from '@mui/material';
 
 
 const ProfileComponent = () => {
