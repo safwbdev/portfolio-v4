@@ -4,16 +4,12 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { DarkModeContext } from './context/darkModeContext';
 import { AuthContext } from './context/AuthContext';
 import Main from './layout/Main';
-import Home from './pages/home/Home'
-import Login from './pages/login/Login'
-import List from './pages/list/List'
-import Single from './pages/single/Single'
+import {
+  Home, Login, List, Single, Edit, New, Profile,
+} from './pages'
 import { ToastContainer } from 'react-toastify';
 import { BY_ID, EDIT_BY_ID, EDUCATION, EXPERIENCE, LOGIN, NEW, PROJECTS, ROOT, SKILLS, USERS } from './routes';
 import { educationColumns, experienceColumns, projectColumns, skillColumns } from './datatablesource';
-import Edit from './pages/edit/Edit';
-import New from './pages/new/New';
-import Profile from './pages/profile/Profile';
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
@@ -24,6 +20,17 @@ function App() {
     }
     return children
   }
+
+
+  /**
+   * =====
+   * TODOD
+   * =====
+   * - upload images (profile,projects,experience,education)
+   * - display images (profile,projects,experience,education)
+   * - add certifications
+   * 
+   */
 
   return (
     <div className={`${classes.app} ${darkMode ? classes.dark : ''}`}>

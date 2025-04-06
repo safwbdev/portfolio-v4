@@ -16,6 +16,8 @@ import {
     Grid,
     TextField,
 } from '@mui/material';
+import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
+
 import useDataType from '../../hooks/useDataType'
 
 const Edit = () => {
@@ -23,7 +25,7 @@ const Edit = () => {
     const id = location.pathname.split("/")[3];
     const { data, loading } = useFetch(`${API_URL}/${path}/${id}`);
     const { inputData } = useDataType(path);
-    const requiresImage = path === 'users';
+    const requiresImage = path !== 'skills';
 
     const [info, setInfo] = useState({});
     const [file, setFile] = useState("");
@@ -33,6 +35,20 @@ const Edit = () => {
     useEffect(() => {
         setInfo(data);
     }, [data])
+
+    // useEffect(() => {
+    //     if (!requiresImage) return;
+    //     let getImg = null;
+    //     if (path !== 'skills' && info) {
+    //         setdefaultImg(info.img);
+    //         // if (path === 'projects' && info.img && info.img.length > 0) {
+    //         //     console.log('lollo', info.img);
+    //         //     setdefaultImg(info.img);
+    //         // }
+    //     }
+    // }, [info])
+    console.log(defaultImg);
+
 
     const handleChange = (e) => {
         setInfo(prev => ({ ...prev, [e.target.id]: e.target.value }))
@@ -54,11 +70,35 @@ const Edit = () => {
 
     return loading ? (<CircularProgress />) : (
         <Grid container justify="center" spacing={1}>
-            <Grid item md={6}>
+            <Grid md={6}>
                 <Card className={classes.padding}>
                     <CardHeader title={`EDIT ${path.toLocaleUpperCase().slice(0, -1)}`} />
                     <form>
                         <CardContent>
+                            {requiresImage && (<CardHeader title={
+                                <>
+                                    <label htmlFor="file"
+                                        style={{
+                                            alignItems: "center",
+                                            display: "flex",
+                                            width: 'max-content'
+                                        }}>
+                                        <DriveFolderUploadOutlinedIcon
+                                            className={classes.icon} style={{ marginRight: '.3em' }} />
+                                        Upload new Image
+                                    </label>
+                                    <input
+                                        type="file"
+                                        id="file"
+                                        onChange={(e) => setFile(e.target.files[0])}
+                                        style={{ display: "none" }}
+                                    />
+                                </>}
+                                avatar={
+                                    <Avatar alt="image" src={file ? URL.createObjectURL(file) : defaultImg}
+                                        variant="square"
+                                        sx={{ width: 150, height: 150 }} />
+                                } ></CardHeader>)}
                             <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }} >
                                 {inputData.map((input) => (<Grid size={{ xs: 12, sm: 6 }} key={input.id} >
                                     <TextField
