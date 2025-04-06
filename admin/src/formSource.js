@@ -206,6 +206,33 @@ export const educationInputs = [
     },
 ]
 
+export const certificationInputs = [
+    {
+        id: "title",
+        label: "Title",
+        type: "text",
+        placeholder: "eg. Bachelors of Science",
+    },
+    {
+        id: "school",
+        label: "School",
+        type: "text",
+        placeholder: "Name of School/University",
+    },
+    {
+        id: "location",
+        label: "Location",
+        type: "string",
+        placeholder: "eg. USA",
+    },
+    {
+        id: "date",
+        label: "Date",
+        type: "string",
+        placeholder: "eg. Aug 2014",
+    },
+]
+
 export const experienceInputs = [
     {
         id: "position",

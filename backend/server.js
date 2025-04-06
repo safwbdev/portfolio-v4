@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import authRoute from './routes/auth.js'
 import skillsRoute from './routes/skills.js'
 import educationRoute from './routes/education.js'
+import certificationRoute from './routes/certification.js'
 import experienceRoute from './routes/experience.js'
 import projectsRoute from './routes/project.js'
 import usersRoute from './routes/user.js'
@@ -38,6 +39,7 @@ app.use(express.json());
 app.use('/api/auth', authRoute);
 app.use('/api/skills', skillsRoute);
 app.use('/api/education', educationRoute);
+app.use('/api/certifications', certificationRoute);
 app.use('/api/experience', experienceRoute);
 app.use('/api/projects', projectsRoute);
 app.use('/api/users', usersRoute);

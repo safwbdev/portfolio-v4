@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import classes from './Edit.module.scss'
 import useFetch from '../../hooks/useFetch'
-import { API_URL, IMG_UPLOAD_PATH } from '../../routes'
+import { API_URL, CERTIFICATIONS, IMG_UPLOAD_PATH, SKILLS } from '../../routes'
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
@@ -25,7 +25,7 @@ const Edit = () => {
     const id = location.pathname.split("/")[3];
     const { data, loading } = useFetch(`${API_URL}/${path}/${id}`);
     const { inputData } = useDataType(path);
-    const requiresImage = path !== 'skills';
+    const requiresImage = path !== SKILLS && path !== CERTIFICATIONS;
 
     const [info, setInfo] = useState({});
     const [file, setFile] = useState("");
@@ -72,8 +72,6 @@ const Edit = () => {
 
         try {
             await axios.put(`${API_URL}/${path}/${id}`, updatedData);
-            console.log('updatedData:', updatedData);
-
             const getType = path[0].toUpperCase() + path.slice(1);
             toast.success(`${getType.slice(0, -1)} has been updated!`);
             navigate(`/${path}`)

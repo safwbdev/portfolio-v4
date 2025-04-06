@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import classes from './New.module.scss'
 import axios from 'axios';
-import { API_URL, IMG_UPLOAD_PATH, } from '../../routes';
+import { API_URL, CERTIFICATIONS, IMG_UPLOAD_PATH, SKILLS, } from '../../routes';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { Button, Card, CardActions, CardContent, CardHeader, Grid, TextField, Avatar } from '@mui/material';
@@ -15,7 +15,7 @@ const New = () => {
     const defaultImg = "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg";
     const path = location.pathname.split("/")[1];
     const { inputData } = useDataType(path);
-    const requiresImage = path !== 'skills';
+    const requiresImage = path !== SKILLS && path !== CERTIFICATIONS;
 
     const handleChange = (e) => {
         setInfo(prev => ({ ...prev, [e.target.id]: e.target.value }))

@@ -15,7 +15,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { toast } from 'react-toastify';
-import { EDUCATION, EXPERIENCE, PROJECTS, ROOT, SKILLS, USERS } from '../../routes';
+import { CERTIFICATIONS, EDUCATION, EXPERIENCE, PROJECTS, ROOT, SKILLS, USERS } from '../../routes';
 import ConstructionIcon from '@mui/icons-material/Construction';
 import { AuthContext } from '../../context/AuthContext';
 import PersonIcon from '@mui/icons-material/Person';
@@ -43,7 +43,8 @@ const Sidebar = () => {
         { label: 'Skills', url: SKILLS, icon: (<ConstructionIcon />) },
         { label: 'Projects', url: PROJECTS, icon: (<BuildIcon />) },
         { label: 'Experience', url: EXPERIENCE, icon: (<BusinessIcon />) },
-        { label: 'Education', url: EDUCATION, icon: (<SchoolIcon />) }
+        { label: 'Education', url: EDUCATION, icon: (<SchoolIcon />) },
+        { label: 'Certifications', url: CERTIFICATIONS, icon: (<SchoolIcon />) }
     ];
 
     return (

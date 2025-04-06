@@ -5,6 +5,7 @@ import ProjectsComponent from '../../components/displayComponents/ProjectsCompon
 import EducationComponent from '../../components/displayComponents/EducationComponent';
 import ExperienceComponent from '../../components/displayComponents/ExperienceComponent';
 import ProfileComponent from '../../components/displayComponents/ProfileComponent';
+import CertificationComponent from '../../components/displayComponents/CertificationComponent';
 
 const Home = () => {
 
@@ -15,6 +16,7 @@ const Home = () => {
             <ProjectsComponent />
             <EducationComponent />
             <ExperienceComponent />
+            <CertificationComponent />
         </div>
     )
 }

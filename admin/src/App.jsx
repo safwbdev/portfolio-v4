@@ -8,7 +8,7 @@ import {
   Home, Login, List, Single, Edit, New, Profile,
 } from './pages'
 import { ToastContainer } from 'react-toastify';
-import { BY_ID, EDIT_BY_ID, EDUCATION, EXPERIENCE, LOGIN, NEW, PROJECTS, ROOT, SKILLS, USERS } from './routes';
+import { BY_ID, CERTIFICATIONS, EDIT_BY_ID, EDUCATION, EXPERIENCE, LOGIN, NEW, PROJECTS, ROOT, SKILLS, USERS } from './routes';
 import { educationColumns, experienceColumns, projectColumns, skillColumns } from './datatablesource';
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -27,7 +27,6 @@ function App() {
    * TODOD
    * =====
    * - upload multiple images for projects
-   * - add certifications
    * 
    */
 
@@ -126,6 +125,28 @@ function App() {
               } />
             </Route>
             <Route path={EDUCATION}>
+              <Route index element={
+                <ProtectedRoute>
+                  <List columns={educationColumns} />
+                </ProtectedRoute>}>
+              </Route>
+              <Route path={BY_ID} element={
+                <ProtectedRoute>
+                  <Single />
+                </ProtectedRoute>
+              } />
+              <Route path={`${EDIT_BY_ID}`} element={
+                <ProtectedRoute>
+                  <Edit />
+                </ProtectedRoute>
+              } />
+              <Route path={NEW} element={
+                <ProtectedRoute>
+                  <New />
+                </ProtectedRoute>
+              } />
+            </Route>
+            <Route path={CERTIFICATIONS}>
               <Route index element={
                 <ProtectedRoute>
                   <List columns={educationColumns} />

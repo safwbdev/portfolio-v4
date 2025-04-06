@@ -26,3 +26,4 @@ export const SKILLS = `skills`;
 export const PROJECTS = `projects`;
 export const EXPERIENCE = `experience`;
 export const EDUCATION = `education`;
+export const CERTIFICATIONS = `certifications`;
