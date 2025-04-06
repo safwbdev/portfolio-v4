@@ -27,7 +27,6 @@ function App() {
    * TODOD
    * =====
    * - upload multiple images for projects
-   * - display images (profile,projects,experience,education)
    * - add certifications
    * 
    */

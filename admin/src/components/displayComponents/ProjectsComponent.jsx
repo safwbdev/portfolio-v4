@@ -4,12 +4,14 @@ import { API_URL } from '../../routes';
 import {
     Card,
     CardContent,
+    CardMedia,
     Stack,
     Typography,
 } from '@mui/material';
 
 const ProjectsComponent = () => {
     const { data, loading } = useFetch(`${API_URL}/projects`);
+    const defaultImg = "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg";
 
     return loading ? (<h2>Loading...</h2>) : (
         <div className={'projectsContainer'}>
@@ -18,6 +20,11 @@ const ProjectsComponent = () => {
                 {data.map((proj) => (
                     <Card key={proj._id}>
                         <CardContent>
+                            <CardMedia
+                                sx={{ height: 50 }}
+                                image={proj.img[0] || defaultImg}
+                                title="media"
+                            />
                             <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
                                 {proj.type}
                             </Typography>
