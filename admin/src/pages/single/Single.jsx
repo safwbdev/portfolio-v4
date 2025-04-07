@@ -54,12 +54,12 @@ const Single = () => {
             marginTop={5}
             spacing={1}>
             <Card sx={{ display: 'flex', width: '100%' }}>
-                {path !== 'rooms' && (<CardMedia
+                {<CardMedia
                     component="img"
                     sx={{ width: 500 }}
                     image={defaultImg}
                     alt="NA"
-                />)}
+                />}
                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <CardContent sx={{ flex: '1  auto' }}>
                         <Typography component="div" variant="h5">

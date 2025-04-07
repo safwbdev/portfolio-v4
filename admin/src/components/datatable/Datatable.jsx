@@ -46,7 +46,7 @@ const Datatable = ({ columns }) => {
             renderCell: (params) => {
                 return (
                     <div>
-                        {path !== 'skills' && (<Link to={params.row._id}>
+                        {path !== SKILLS && (<Link to={params.row._id}>
                             <Button style={{ marginRight: 5 }} variant="contained" className={classes.viewButton}>View</Button>
                         </Link>)}
                         <Link to={`${EDIT}/${params.row._id}`}>
