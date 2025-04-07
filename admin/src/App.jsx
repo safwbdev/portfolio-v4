@@ -10,6 +10,7 @@ import {
 import { ToastContainer } from 'react-toastify';
 import { BY_ID, CERTIFICATIONS, EDIT_BY_ID, EDUCATION, EXPERIENCE, LOGIN, NEW, PROJECTS, ROOT, SKILLS, USERS } from './routes';
 import { educationColumns, experienceColumns, projectColumns, skillColumns } from './datatablesource';
+import EditProject from './pages/editProject/EditProject';
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
@@ -20,15 +21,6 @@ function App() {
     }
     return children
   }
-
-
-  /**
-   * =====
-   * TODOD
-   * =====
-   * - multiple image upload for Edit
-   * 
-   */
 
   return (
     <div className={`${classes.app} ${darkMode ? classes.dark : ''}`}>
@@ -93,7 +85,7 @@ function App() {
               } />
               <Route path={`${EDIT_BY_ID}`} element={
                 <ProtectedRoute>
-                  <Edit />
+                  <EditProject />
                 </ProtectedRoute>
               } />
               <Route path={NEW} element={

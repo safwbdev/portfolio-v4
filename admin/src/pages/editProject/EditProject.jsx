@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import classes from './Edit.module.scss'
+import classes from './EditProject.module.scss'
 import useFetch from '../../hooks/useFetch'
-import { API_URL, CERTIFICATIONS, IMG_UPLOAD_PATH, SKILLS } from '../../routes'
-import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
-import useDataType from '../../hooks/useDataType'
+import { API_URL, CERTIFICATIONS, IMG_UPLOAD_PATH, PROJECTS, SKILLS } from '../../routes'
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
@@ -15,11 +13,18 @@ import {
     CardContent,
     CardHeader,
     CircularProgress,
+    Fab,
     Grid,
+    ImageList,
+    ImageListItem,
     TextField,
 } from '@mui/material';
+import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
+import CloseIcon from '@mui/icons-material/Close';
 
-const Edit = () => {
+import useDataType from '../../hooks/useDataType'
+
+const EditProject = () => {
     const path = location.pathname.split("/")[1];
     const id = location.pathname.split("/")[3];
     const { data, loading } = useFetch(`${API_URL}/${path}/${id}`);
@@ -27,7 +32,8 @@ const Edit = () => {
     const requiresImage = path !== SKILLS && path !== CERTIFICATIONS;
 
     const [info, setInfo] = useState({});
-    const [file, setFile] = useState("");
+    const [files, setFiles] = useState("");
+    const [previewImages, setPreviewImages] = useState([]);
     const [defaultImg, setdefaultImg] = useState("https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg");
     const navigate = useNavigate()
 
@@ -37,8 +43,9 @@ const Edit = () => {
 
     useEffect(() => {
         if (!requiresImage) return;
-        if (path !== SKILLS && info) {
-            setdefaultImg(info.img);
+        if (path === PROJECTS && info.img && info.img.length > 0) {
+            setdefaultImg(info.img[0]);
+            setPreviewImages(info.img)
         }
     }, [info])
 
@@ -49,18 +56,18 @@ const Edit = () => {
 
     const handleClick = async () => {
         let updatedData = {};
-        if (file) {
-            const data = new FormData();
-            data.append("file", file);
-            data.append("upload_preset", "upload");
-            try {
-                const uploadRes = await axios.post(IMG_UPLOAD_PATH, data);
-                const { url } = uploadRes.data;
-                updatedData = { ...info, img: url };
-            } catch (err) {
-                console.log(err);
+        if (files) {
+            const list = await Promise.all(
+                Object.values(files).map(async (file) => {
+                    const data = new FormData();
+                    data.append("file", file);
+                    data.append("upload_preset", "upload");
+                    const uploadRes = await axios.post(IMG_UPLOAD_PATH, data);
+                    const { url } = uploadRes.data;
+                    return url
+                }));
 
-            }
+            updatedData = { ...info, img: list, };
 
         } else {
             updatedData = { ...info };
@@ -75,6 +82,17 @@ const Edit = () => {
             console.log(err);
         }
     }
+
+    // Update Preview 
+    useEffect(() => {
+        setPreviewImages([])
+        Object.values(files).map((item, index) => {
+            setPreviewImages(prev => [...prev, URL.createObjectURL(files[index])]);
+        })
+
+
+    }, [files])
+
 
 
     return loading ? (<CircularProgress />) : (
@@ -94,21 +112,23 @@ const Edit = () => {
                                         }}>
                                         <DriveFolderUploadOutlinedIcon
                                             className={classes.icon} style={{ marginRight: '.3em' }} />
-                                        Upload new Image
+                                        Upload new Images
                                     </label>
                                     <input
                                         type="file"
                                         id="file"
-                                        onChange={(e) => setFile(e.target.files[0])}
+                                        multiple
+                                        onChange={(e) => setFiles(e.target.files)}
                                         style={{ display: "none" }}
                                     />
                                 </>}
                                 // FIXME: ICON BUG HERE
                                 avatar={
-                                    <Avatar alt="image" src={file ? URL.createObjectURL(file) : defaultImg}
+                                    <Avatar alt="image" src={files ? URL.createObjectURL(files[0]) : defaultImg}
                                         variant="square"
-                                        sx={{ width: 150, height: 150 }} />
-                                } ></CardHeader>)}
+                                        sx={{ width: 150, height: 150 }} />} >
+
+                            </CardHeader>)}
                             <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }} >
                                 {inputData.map((input) => (<Grid size={{ xs: 12, sm: 6 }} key={input.id} >
                                     <TextField
@@ -122,6 +142,24 @@ const Edit = () => {
                                         type={input.type} />
                                 </Grid>))}
                             </Grid>
+                            {previewImages && (
+                                <ImageList
+                                    sx={{ width: 600, height: 250 }}
+                                    cols={3} rowHeight={164}>
+                                    {previewImages.map((item, index) => {
+                                        return (
+                                            <ImageListItem key={index}>
+                                                <img
+                                                    srcSet={item}
+                                                    src={item}
+                                                    alt='hotelImg'
+                                                    loading="lazy"
+                                                />
+                                            </ImageListItem>
+                                        )
+                                    })}
+                                </ImageList>
+                            )}
                         </CardContent>
                         <CardActions>
                             <Button fullWidth variant='contained' onClick={handleClick}>Update</Button>
@@ -133,4 +171,4 @@ const Edit = () => {
     )
 }
 
-export default Edit
+export default EditProject
