@@ -26,7 +26,7 @@ function App() {
    * =====
    * TODOD
    * =====
-   * - upload multiple images for projects
+   * - multiple image upload for Edit
    * 
    */
 

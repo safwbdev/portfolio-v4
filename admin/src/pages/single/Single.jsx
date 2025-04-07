@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import classes from './Single.module.scss'
 import useFetch from '../../hooks/useFetch'
-import { API_URL } from '../../routes'
+import { API_URL, PROJECTS, USERS } from '../../routes'
+import useDataType from '../../hooks/useDataType';
 import {
     Box,
     Card,
@@ -14,9 +15,6 @@ import {
     Grid,
     CardHeader
 } from '@mui/material';
-import useDataType from '../../hooks/useDataType';
-
-// import { educationInputs, projectInputs } from '../../formSource';
 
 const Single = () => {
 
@@ -30,12 +28,12 @@ const Single = () => {
     const { inputData } = useDataType(path);
 
     useEffect(() => {
-        if (path !== 'users' && data.img && data.img.length !== 0) {
+        if (path !== USERS && data.img && data.img.length !== 0) {
             setdefaultImg(data.img);
         }
-        if (path === 'hotels' && data.photos && data.photos.length > 0) {
-            setFiles(data.photos)
-            setdefaultImg(data.photos[0]);
+        if (path === PROJECTS && data.img && data.img.length > 0) {
+            setFiles(data.img)
+            setdefaultImg(data.img[0]);
         }
     }, [data])
 
@@ -72,7 +70,6 @@ const Single = () => {
                             component="div"
                             sx={{ color: 'text.secondary' }}
                         >
-                            {path === 'users' ? data.isAdmin ? 'Admin' : 'General User' : ''}
                         </Typography>
                         <DisplayData />
                     </CardContent>
