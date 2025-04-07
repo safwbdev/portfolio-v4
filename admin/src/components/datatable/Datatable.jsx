@@ -3,7 +3,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import classes from './Datatable.module.scss'
 import { Link, useLocation, } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch.jsx';
-import { API_URL, EDIT } from '../../routes.js';
+import { API_URL, EDIT, SKILLS } from '../../routes.js';
 import { Button, Grid, Typography } from '@mui/material';
 import { toast } from 'react-toastify';
 import axios from 'axios';
@@ -71,7 +71,6 @@ const Datatable = ({ columns }) => {
             marginTop={5}
             spacing={1}>
             <Grid
-                // item
                 display={'flex'}
                 justifyContent={"space-between"}
                 width={'100%'}>
@@ -81,11 +80,6 @@ const Datatable = ({ columns }) => {
                     variant="h5">
                     {path}
                 </Typography>
-                <Link to={`/${path}/new`}>
-                    <Button variant='contained' color="success">
-                        Add New {path.slice(0, -1)}
-                    </Button>
-                </Link>
             </Grid>
             <DataGrid
                 checkboxSelection
@@ -95,6 +89,16 @@ const Datatable = ({ columns }) => {
                 rows={list}
                 rowsPerPageOptions={[9]}
                 pageSize={9} />
+            <Grid
+                display={'flex'}
+                justifyContent={"space-between"}
+                width={'100%'}>
+                <Link to={`/${path}/new`}>
+                    <Button variant='contained' color="success">
+                        Add New {path.slice(-1) === 's' ? path.slice(0, -1) : path}
+                    </Button>
+                </Link>
+            </Grid>
         </Grid>
 
 
