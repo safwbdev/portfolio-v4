@@ -22,6 +22,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import BuildIcon from '@mui/icons-material/Build';
 import BusinessIcon from '@mui/icons-material/Business';
 import SchoolIcon from '@mui/icons-material/School';
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 
 const Sidebar = () => {
 
@@ -44,7 +45,7 @@ const Sidebar = () => {
         { label: 'Projects', url: PROJECTS, icon: (<BuildIcon />) },
         { label: 'Experience', url: EXPERIENCE, icon: (<BusinessIcon />) },
         { label: 'Education', url: EDUCATION, icon: (<SchoolIcon />) },
-        { label: 'Certifications', url: CERTIFICATIONS, icon: (<SchoolIcon />) }
+        { label: 'Certifications', url: CERTIFICATIONS, icon: (<WorkspacePremiumIcon />) }
     ];
 
     return (

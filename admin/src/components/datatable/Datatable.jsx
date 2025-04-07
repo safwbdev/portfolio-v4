@@ -45,12 +45,12 @@ const Datatable = ({ columns }) => {
             width: 400,
             renderCell: (params) => {
                 return (
-                    <div className={classes.cellAction}>
+                    <div>
                         {path !== 'skills' && (<Link to={params.row._id}>
-                            <Button variant="contained">View</Button>
+                            <Button style={{ marginRight: 5 }} variant="contained" className={classes.viewButton}>View</Button>
                         </Link>)}
                         <Link to={`${EDIT}/${params.row._id}`}>
-                            <Button variant="contained" color="success">Edit</Button>
+                            <Button style={{ marginRight: 5 }} variant="contained" color="success">Edit</Button>
                         </Link >
                         <Button
                             onClick={() => handleDelete(params.row._id)}
