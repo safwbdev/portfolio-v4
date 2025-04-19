@@ -1,4 +1,5 @@
 import React from 'react'
+import style from "./../App.module.scss";
 import useFetch from '../hooks/useFetch';
 import { API_URL } from '../routes';
 
@@ -6,7 +7,7 @@ const EducationSection = () => {
     const { data, loading } = useFetch(`${API_URL}/education`);
     const defaultImg = "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg";
     return loading ? (<h2>Loading...</h2>) : (
-        <div className={'educationContainer'}>
+        <section className={style.education}>
             <h4>Education</h4>
             <div direction="row" spacing={1}>
                 {data.map((edu) => (
@@ -30,7 +31,7 @@ const EducationSection = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     )
 }
 

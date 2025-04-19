@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import style from "./../App.module.scss";
 import useFetch from '../hooks/useFetch';
 import { API_URL } from '../routes';
 
@@ -18,7 +19,7 @@ const ProfileSection = () => {
         }
     }, [profileData])
     return loading ? (<h2>Loading ...</h2>) : profileData && (
-        <div>
+        <section className={style.main}>
             <img src={defaultImg}
                 alt="media"
             />
@@ -48,7 +49,7 @@ const ProfileSection = () => {
                     <button size="small">Website</button>
                 </a>
             </div>
-        </div>
+        </section>
     )
 }
 

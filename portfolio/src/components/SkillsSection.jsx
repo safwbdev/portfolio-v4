@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import style from "./../App.module.scss";
 import useFetch from '../hooks/useFetch';
 import { API_URL } from '../routes';
 
@@ -35,7 +36,7 @@ const SkillsSection = () => {
     }, [data])
 
     return loading ? (<h2>Loading...</h2>) : (
-        <div className={'skillsContainer'}>
+        <section className={style.skills}>
             <h2>Skills</h2>
             {skillData.map((skill) => (
                 <div className='skillSection' key={skill.type}>
@@ -45,9 +46,7 @@ const SkillsSection = () => {
                     </div>
                 </div>
             ))}
-
-
-        </div>
+        </section>
     )
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import style from "./../App.module.scss";
 import useFetch from '../hooks/useFetch';
 import { API_URL } from '../routes';
 
@@ -7,7 +8,7 @@ const ExperienceSection = () => {
     const defaultImg = "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg";
 
     return loading ? (<h2>Loading...</h2>) : (
-        <div className={'experienceContainer'}>
+        <section className={style.experience}>
             <h4>Experience</h4>
             <div direction="row" spacing={1}>
                 {data.map((exp) => (
@@ -31,7 +32,7 @@ const ExperienceSection = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     )
 }
 
