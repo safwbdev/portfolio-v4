@@ -1,0 +1,42 @@
+.main {
+    .headerText {
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+            font-size: 6rem;
+            text-align: left;
+        }
+
+        h2 {
+            text-align: left;
+            font-size: 4rem;
+
+        }
+
+        p {
+            font-size: 1.8rem;
+
+        }
+
+    }
+
+    .headerLinks {
+        margin: 3em 0;
+        display: flex;
+        // border: 1px solid red;
+
+        a {
+            svg {
+                margin: 0.2em;
+                font-size: 2.5rem;
+                // color: red;
+            }
+        }
+    }
+
+    .tagLineText {
+        font-size: 1.8rem;
+
+    }
+}
