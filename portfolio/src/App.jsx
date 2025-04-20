@@ -15,8 +15,8 @@ function App() {
    * TODO
    * ====
    * - Desc text format
-   * - animated BG for Main Header
    * - animate contact area
+   * - Unique BG for Main Header
    * - framer motion
    * - fix scroll bug on contact area
    * - popups for project
@@ -34,6 +34,10 @@ function App() {
    * - layout of desv to include Desc, Tech Stack with link to skills & location
    * - UseContext for Loading status
    * - typed JS for Designation
+   * 
+   * PASS
+   * ====
+   * - animated BG for Main Header
    * 
    * 
    * 

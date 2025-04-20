@@ -12,6 +12,7 @@ const CertificationSection = () => {
                     <div key={edu._id}>
                         <div>
                             <img src={edu.img || defaultImg}
+                                className='className="h-[250px] w-[250px] object-cover rounded-full border-2 shadow-md"'
                                 alt="media"
                             />
                             <h2>

@@ -17,11 +17,12 @@ const ProjectsSection = () => {
     return projectData && (
         <section className={style.projects}>
             <h4>Projects</h4>
-            <div className="row">
+            <div className='grid grid-cols-1 md:grid-cols-4 gap-4'>
                 {/* <Slider {...settings}> */}
                 {projectData.map((proj) => (
-                    <div key={proj._id}>
+                    <div key={proj._id} className="max-w-sm rounded overflow-hidden shadow-lg border-1 rounded-md">
                         <img src={proj.img[0] || defaultImg}
+                            className='className="h-[250px] w-[250px] object-cover rounded-full border-2 shadow-md"'
                             alt="media"
                         />
                         <h2>
