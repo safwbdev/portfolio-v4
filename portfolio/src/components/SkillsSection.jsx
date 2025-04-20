@@ -36,7 +36,7 @@ const SkillsSection = () => {
     }, [data])
 
     return loading ? (<h2>Loading...</h2>) : (
-        <section className={style.skills}>
+        <section className={style.skills} id="skills">
             <h2>Skills</h2>
             {skillData.map((skill) => (
                 <div className='skillSection' key={skill.type}>

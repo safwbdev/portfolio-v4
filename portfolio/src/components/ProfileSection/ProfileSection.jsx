@@ -59,7 +59,8 @@ const ProfileSection = () => {
                     <p>{profileData.desc}</p>
                 </div>
                 <div className={style.techStack}>
-                    <p>I specialize in JavaScript/TypeScript witha a strong focus on React & Vue Ecosystems</p>
+                    <p>{profileData.techStack}</p>
+                    <p>Click <a href='#skills'>HERE</a> to see what else I'm capable of</p>
                 </div>
                 <div className={style.location}>
                     <p>{profileData.location}</p>
