@@ -46,6 +46,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         default: 'tagline to be added',
     },
+    techStack: {
+        type: String,
+        default: 'techStack to be added',
+    },
     location: {
         type: String,
         default: 'location to be added',
