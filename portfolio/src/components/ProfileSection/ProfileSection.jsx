@@ -15,14 +15,12 @@ const ProfileSection = () => {
         setProfileData(data[0])
     }, [data])
 
-    console.log(profileData);
-
-
     useEffect(() => {
         if (profileData) {
             setdefaultImg(profileData.img);
         }
-    }, [profileData])
+    }, [profileData]);
+
     return loading ? (<h2>Loading ...</h2>) : profileData && (
         <>
             <section className={style.main}>
