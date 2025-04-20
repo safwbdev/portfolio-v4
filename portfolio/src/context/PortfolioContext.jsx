@@ -59,12 +59,7 @@ const PortfolioContext = (props) => {
         })
 
         if (tempArr) setskillData(tempArr)
-        console.log(tempArr);
-
     }, [sData])
-
-
-
 
     const values = useMemo(() => ({
         profileData,
