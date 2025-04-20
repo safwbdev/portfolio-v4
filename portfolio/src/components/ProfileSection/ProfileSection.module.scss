@@ -2,37 +2,38 @@
     .headerText {
         display: flex;
         flex-direction: column;
+        text-align: left;
 
-        h1 {
-            font-size: 6rem;
-            text-align: left;
-        }
+        // h1 {
+        //     font-size: 6rem;
+        //     text-align: left;
+        // }
 
-        h2 {
-            text-align: left;
-            font-size: 4rem;
+        // h2 {
+        //     text-align: left;
+        //     font-size: 4rem;
 
-        }
+        // }
 
-        span {
-            text-align: left;
-        }
+        // span {
+        //     text-align: left;
+        // }
 
         .designation {
-            background-color: transparent;
-            border: 0;
-            font-size: 4rem;
-            font-weight: bold;
+            //     background-color: transparent;
+            //     border: 0;
+            //     font-size: 4rem;
+            //     font-weight: bold;
 
             &::placeholder {
                 color: #ffffff;
             }
         }
 
-        p {
-            font-size: 1.8rem;
+        // p {
+        //     font-size: 1.8rem;
 
-        }
+        // }
 
     }
 

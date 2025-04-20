@@ -5,6 +5,8 @@ import { FaLinkedin, FaGithub, FaAddressCard } from "react-icons/fa6";
 import { ReactTyped } from "react-typed";
 import { usePortfolioContext } from '../../context/PortfolioContext';
 import DescBox from './DescBox';
+import logos from '../../assets/logo.png'
+import mas from '../../assets/mas.png'
 
 const ProfileSection = () => {
     const { profileData, defaultImg, openContacts, setOpenContacts } = usePortfolioContext()
@@ -14,7 +16,7 @@ const ProfileSection = () => {
         <>
             <section className={style.main}>
                 <div className={style.headerText}>
-                    <h1>{profileData.fullName}</h1>
+                    <h1 className='mb-4 text-4xl pl-8 font-bold leading-none md:text-8xl md:pl-0'>{profileData.fullName}</h1>
                     <ReactTyped
                         strings={profileData.designation}
                         typeSpeed={40}
@@ -22,9 +24,10 @@ const ProfileSection = () => {
                         attr="placeholder"
                         loop
                     >
-                        <input type="text" disabled className={style.designation} />
+                        <input type="text" disabled
+                            className={`mb-4 text-3xl pl-8 font-extrabold md:text-7xl md:pl-0 uppercase ${style.designation}`} />
                     </ReactTyped>
-                    <h2>Developer</h2>
+                    <h2 className='mb-4 text-3xl pl-8 font-bold md:text-6xl md:pl-0'>Developer</h2>
                 </div>
                 <div className={style.headerLinks}>
                     <a href={profileData.linkedin} target='_blank'>
@@ -41,21 +44,21 @@ const ProfileSection = () => {
 
             </section>
             <section>
-                <div className={style.aboutMe}>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
                     <DescBox
                         title={'Hello There!'}
                         image={defaultImg}
                         text={profileData.desc} />
                     <DescBox
                         title={'Tech Stack'}
-                        image={defaultImg}
+                        image={logos}
                         text={profileData.techStack}
-                        linkText={<>Click <a href='#skills'>HERE</a> to see what else I'm capable of</>} />
+                        linkText={<>Click <a href='#skills' className='inline-block bg-gray-200 rounded-full px-2 py-1 text-sm font-semibold text-gray-700 mx-1'>here</a> to see what else I'm capable of</>} />
                     <DescBox
                         title={`Where I'm at`}
-                        image={defaultImg}
+                        image={mas}
                         text={profileData.location}
-                        linkText={<span onClick={() => setOpenContacts(!openContacts)}>Contact me</span>} />
+                        linkText={<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 cursor-pointer' onClick={() => setOpenContacts(!openContacts)}>Contact me</span>} />
                 </div>
             </section>
             <ContactArea

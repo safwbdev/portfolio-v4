@@ -16,7 +16,6 @@ function App() {
    * ====
    * - Desc text format
    * - animated BG for Main Header
-   * - tailwindcss kinda REQIORED for RESPONSIVE
    * - animate contact area
    * - framer motion
    * - fix scroll bug on contact area
@@ -29,6 +28,7 @@ function App() {
    * 
    * DONE
    * ====
+   * - tailwindcss kinda REQIORED for RESPONSIVE
    * - proper links for whatsapp, email
    * - slider for projects, skills,
    * - layout of desv to include Desc, Tech Stack with link to skills & location
