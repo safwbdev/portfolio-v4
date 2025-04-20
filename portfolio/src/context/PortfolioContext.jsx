@@ -39,11 +39,7 @@ const PortfolioContext = (props) => {
     useEffect(() => {
         if (sLoading && pLoading && projectLoading && cLoading && eduLoading && expLoading) return;
         setIsLoaded(true)
-    }, [sLoading, pLoading, projectLoading, cLoading, eduLoading, expLoading])
-
-
-    console.log(isLoaded ? 'LOADED' : 'loading');
-
+    }, [sLoading, pLoading, projectLoading, cLoading, eduLoading, expLoading]);
 
     useEffect(() => {
         let tempArr = [];

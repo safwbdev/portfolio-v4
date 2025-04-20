@@ -12,9 +12,6 @@ const ProfileSection = () => {
     return profileData && (
         <>
             <section className={style.main}>
-                <img src={defaultImg}
-                    alt="media"
-                />
                 <div className={style.headerText}>
                     <h1>{profileData.fullName}</h1>
                     <ReactTyped
@@ -42,17 +39,27 @@ const ProfileSection = () => {
                 <p className={style.tagLineText}>{profileData.tagline}</p>
 
             </section>
-            <section className={style.aboutMe}>
-                <div className={style.desc}>
-                    <p>{profileData.desc}</p>
-                </div>
-                <div className={style.techStack}>
-                    <p>{profileData.techStack}</p>
-                    <p>Click <a href='#skills'>HERE</a> to see what else I'm capable of</p>
-                </div>
-                <div className={style.location}>
-                    <p>{profileData.location}</p>
-                    <p onClick={() => setOpenContacts(!openContacts)}>Contact me</p>
+            <section >
+                <div className={style.aboutMe}>
+                    <div className={style.desc}>
+                        <img src={defaultImg} alt="image" />
+                        <h1>Hello There!</h1>
+                        <p>{profileData.desc}</p>
+                    </div>
+                    <div className={style.techStack}>
+                        <img src={defaultImg} alt="image" />
+                        <h1>Tech Stack</h1>
+                        <p>{profileData.techStack}</p>
+                        <p>Click <a href='#skills'>HERE</a> to see what else I'm capable of</p>
+                    </div>
+                    <div className={style.location}>
+                        <img src={defaultImg} alt="image" />
+                        <h1>Where I'm at</h1>
+                        <p>{profileData.location}</p>
+                        <p>
+
+                            <span onClick={() => setOpenContacts(!openContacts)}>Contact me</span></p>
+                    </div>
                 </div>
             </section>
             <ContactArea

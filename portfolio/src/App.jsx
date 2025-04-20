@@ -16,7 +16,6 @@ function App() {
    * ====
    * - Desc text format
    * - slider for projects, skills,
-   * - proper links for whatsapp, email
    * - animated BG for Main Header
    * - tailwindcss?
    * - animate contact area
@@ -25,11 +24,13 @@ function App() {
    * - popups for project
    * - image gallery for project
    * - mobile slider for experience, education & certifactions 
-   * Profile section to appear first on load
+   * - Profile section to appear first on load
+   * - up/down button
    * 
    * 
    * DONE
    * ====
+   * - proper links for whatsapp, email
    * - layout of desv to include Desc, Tech Stack with link to skills & location
    * - UseContext for Loading status
    * - typed JS for Designation
