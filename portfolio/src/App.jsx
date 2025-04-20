@@ -15,7 +15,6 @@ function App() {
    * TODO
    * ====
    * - Desc text format
-   * - slider for projects, skills,
    * - animated BG for Main Header
    * - tailwindcss?
    * - animate contact area
@@ -31,6 +30,7 @@ function App() {
    * DONE
    * ====
    * - proper links for whatsapp, email
+   * - slider for projects, skills,
    * - layout of desv to include Desc, Tech Stack with link to skills & location
    * - UseContext for Loading status
    * - typed JS for Designation

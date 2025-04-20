@@ -153,3 +153,9 @@ button:hover {
 .slick-dots li button:before {
   color: var(--primary) !important;
 }
+
+.slick-list {
+  border: 1px solid red;
+  width: 100% !important;
+  position: absolute !important;
+}
