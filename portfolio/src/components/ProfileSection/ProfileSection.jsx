@@ -42,8 +42,16 @@ const ProfileSection = () => {
                 <p className={style.tagLineText}>{profileData.tagline}</p>
 
             </section>
-            <section className='desc'>
-                <p>{profileData.desc}</p>
+            <section className={style.aboutMe}>
+                <div className={style.desc}>
+                    <p>{profileData.desc}</p>
+                </div>
+                <div className={style.techStack}>
+                    <p>I specialize in JavaScript/TypeScript witha a strong focus on React & Vue Ecosystems</p>
+                </div>
+                <div className={style.location}>
+                    <p>{profileData.location}</p>
+                </div>
             </section>
             <ContactArea
                 email={profileData.email}

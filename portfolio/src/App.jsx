@@ -26,6 +26,7 @@ function App() {
    * - popups for project
    * - image gallery for project
    * - mobile slider for experience, education & certifactions 
+   * - UseContext for Loading status
    */
 
   return (

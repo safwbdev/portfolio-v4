@@ -3,6 +3,8 @@
     position: fixed;
     bottom: 3%;
     width: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     button {
         width: 3rem;
