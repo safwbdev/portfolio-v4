@@ -1,16 +1,14 @@
 import React from 'react'
 import style from "./../App.module.scss";
-import useFetch from '../hooks/useFetch';
-import { API_URL } from '../routes';
+import { usePortfolioContext } from '../context/PortfolioContext';
 
 const CertificationSection = () => {
-    const { data, loading } = useFetch(`${API_URL}/certifications`);
-    const defaultImg = "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg";
-    return loading ? (<h2>Loading...</h2>) : (
+    const { certificationData, defaultImg } = usePortfolioContext()
+    return certificationData && (
         <section className={style.certifications}>
             <h4>Certification</h4>
             <div direction="row" spacing={1}>
-                {data.map((edu) => (
+                {certificationData.map((edu) => (
                     <div key={edu._id}>
                         <div>
                             <img src={edu.img || defaultImg}

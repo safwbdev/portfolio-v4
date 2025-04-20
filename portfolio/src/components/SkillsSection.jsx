@@ -1,41 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import style from "./../App.module.scss";
-import useFetch from '../hooks/useFetch';
-import { API_URL } from '../routes';
+import { usePortfolioContext } from '../context/PortfolioContext';
 
 const SkillsSection = () => {
-    const [skillData, setskillData] = useState([])
-    const { data, loading } = useFetch(`${API_URL}/skills`);
+    const { skillData } = usePortfolioContext();
 
-    const getTypeArray = (array) => {
-        let tempArr = [];
-        array.map(arr => {
-            if (!tempArr.includes(arr.type)) tempArr.push(arr.type)
-        })
-        if (tempArr) return tempArr
-    }
-
-    useEffect(() => {
-        let tempArr = [];
-        const typeArr = getTypeArray(data);
-        typeArr.map(type => {
-            let tempArr2 = [];
-            data.map(d => {
-                if (d.type === type) {
-                    tempArr2.push(d.name)
-                }
-
-            })
-            tempArr.push({
-                type: type,
-                skills: tempArr2
-            });
-        })
-
-        if (tempArr) setskillData(tempArr)
-    }, [data])
-
-    return loading ? (<h2>Loading...</h2>) : (
+    return skillData && (
         <section className={style.skills} id="skills">
             <h2>Skills</h2>
             {skillData.map((skill) => (

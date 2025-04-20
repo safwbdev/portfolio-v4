@@ -7,6 +7,7 @@ import {
   ProjectsSection,
   SkillsSection,
 } from './components'
+import { usePortfolioContext } from "./context/PortfolioContext";
 
 function App() {
 
@@ -14,7 +15,6 @@ function App() {
    * TODO
    * ====
    * - Desc text format
-   * - layout of desv to include Desc, Tech Stack with link to skills & location
    * - slider for projects, skills,
    * - proper links for whatsapp, email
    * - animated BG for Main Header
@@ -25,18 +25,21 @@ function App() {
    * - popups for project
    * - image gallery for project
    * - mobile slider for experience, education & certifactions 
-   * - UseContext for Loading status
+   * Profile section to appear first on load
    * 
    * 
    * DONE
    * ====
+   * - layout of desv to include Desc, Tech Stack with link to skills & location
+   * - UseContext for Loading status
    * - typed JS for Designation
    * 
    * 
    * 
   */
+  const { isLoaded } = usePortfolioContext()
 
-  return (
+  return isLoaded ? (
     <div className={style.app}>
       <ProfileSection />
       <ProjectsSection />
@@ -44,6 +47,10 @@ function App() {
       <ExperienceSection />
       <EducationSection />
       <CertificationSection />
+    </div>
+  ) : (
+    <div className="loading">
+      <h1>LOADING...</h1>
     </div>
   )
 }

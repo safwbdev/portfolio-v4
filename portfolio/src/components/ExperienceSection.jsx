@@ -1,17 +1,15 @@
 import React from 'react'
 import style from "./../App.module.scss";
-import useFetch from '../hooks/useFetch';
-import { API_URL } from '../routes';
+import { usePortfolioContext } from '../context/PortfolioContext';
 
 const ExperienceSection = () => {
-    const { data, loading } = useFetch(`${API_URL}/experience`);
-    const defaultImg = "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg";
+    const { experienceData, defaultImg } = usePortfolioContext()
 
-    return loading ? (<h2>Loading...</h2>) : (
+    return experienceData && (
         <section className={style.experience}>
             <h4>Experience</h4>
             <div direction="row" spacing={1}>
-                {data.map((exp) => (
+                {experienceData.map((exp) => (
                     <div key={exp._id}>
                         <div>
                             <img

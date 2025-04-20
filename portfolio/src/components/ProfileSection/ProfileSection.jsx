@@ -1,27 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import style from "./ProfileSection.module.scss";
-import useFetch from '../../hooks/useFetch';
-import { API_URL } from '../../routes';
 import { ContactArea } from '..';
 import { FaLinkedin, FaGithub, FaAddressCard } from "react-icons/fa6";
 import { ReactTyped } from "react-typed";
+import { usePortfolioContext } from '../../context/PortfolioContext';
 
 const ProfileSection = () => {
-    const [profileData, setProfileData] = useState(null)
-    const [defaultImg, setdefaultImg] = useState("https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg");
-    const { data, loading } = useFetch(`${API_URL}/users`);
+    const { profileData, defaultImg, openContacts, setOpenContacts } = usePortfolioContext()
 
-    useEffect(() => {
-        setProfileData(data[0])
-    }, [data])
 
-    useEffect(() => {
-        if (profileData) {
-            setdefaultImg(profileData.img);
-        }
-    }, [profileData]);
-
-    return loading ? (<h2>Loading ...</h2>) : profileData && (
+    return profileData && (
         <>
             <section className={style.main}>
                 <img src={defaultImg}
@@ -64,6 +52,7 @@ const ProfileSection = () => {
                 </div>
                 <div className={style.location}>
                     <p>{profileData.location}</p>
+                    <p onClick={() => setOpenContacts(!openContacts)}>Contact me</p>
                 </div>
             </section>
             <ContactArea
