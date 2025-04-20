@@ -3,7 +3,7 @@ import style from "./ProfileSection.module.scss";
 import useFetch from '../../hooks/useFetch';
 import { API_URL } from '../../routes';
 import { ContactArea } from '..';
-import { FaLinkedin, FaGithub, } from "react-icons/fa6";
+import { FaLinkedin, FaGithub, FaAddressCard } from "react-icons/fa6";
 import { ReactTyped } from "react-typed";
 
 const ProfileSection = () => {
@@ -46,6 +46,9 @@ const ProfileSection = () => {
                     </a>
                     <a href={profileData.github} target='_blank'>
                         <FaGithub />
+                    </a>
+                    <a href={profileData.website} target='_blank'>
+                        <FaAddressCard />
                     </a>
                 </div>
                 <p className={style.tagLineText}>{profileData.tagline}</p>
