@@ -4,7 +4,7 @@ import useFetch from '../../hooks/useFetch';
 import { API_URL } from '../../routes';
 import { ContactArea } from '..';
 import { FaLinkedin, FaGithub, } from "react-icons/fa6";
-
+import { ReactTyped } from "react-typed";
 
 const ProfileSection = () => {
     const [profileData, setProfileData] = useState(null)
@@ -29,7 +29,16 @@ const ProfileSection = () => {
                 />
                 <div className={style.headerText}>
                     <h1>{profileData.fullName}</h1>
-                    <h2>{profileData.designation}</h2>
+                    <ReactTyped
+                        strings={profileData.designation}
+                        typeSpeed={40}
+                        backSpeed={50}
+                        attr="placeholder"
+                        loop
+                    >
+                        <input type="text" disabled className={style.designation} />
+                    </ReactTyped>
+                    <h2>Developer</h2>
                 </div>
                 <div className={style.headerLinks}>
                     <a href={profileData.linkedin} target='_blank'>

@@ -13,7 +13,6 @@ function App() {
   /**
    * TODO
    * ====
-   * - typed JS for Designation
    * - Desc text format
    * - layout of desv to include Desc, Tech Stack with link to skills & location
    * - slider for projects, skills,
@@ -27,7 +26,15 @@ function App() {
    * - image gallery for project
    * - mobile slider for experience, education & certifactions 
    * - UseContext for Loading status
-   */
+   * 
+   * 
+   * DONE
+   * ====
+   * - typed JS for Designation
+   * 
+   * 
+   * 
+  */
 
   return (
     <div className={style.app}>

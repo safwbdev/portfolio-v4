@@ -14,6 +14,21 @@
 
         }
 
+        span {
+            text-align: left;
+        }
+
+        .designation {
+            background-color: transparent;
+            border: 0;
+            font-size: 4rem;
+            font-weight: bold;
+
+            &::placeholder {
+                color: #ffffff;
+            }
+        }
+
         p {
             font-size: 1.8rem;
 
