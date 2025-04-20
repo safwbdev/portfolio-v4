@@ -58,8 +58,11 @@
 }
 
 .aboutMe {
-    display: flex;
-    flex-direction: row !important;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    // gap: calc(var(0.25rem) * 5);
+    gap: 1rem;
 
     .desc,
     .techStack,
@@ -71,6 +74,7 @@
         border: 1px solid;
 
         img {
+            border: 1px solid red;
             width: 100%;
         }
 

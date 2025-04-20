@@ -1,4 +1,15 @@
-:root {
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+/* :root {
   --dark: #101010;
   --semidark: #1a1a1a;
   --grey: #252525;
@@ -84,7 +95,6 @@ button:hover {
 
 .container {
   width: 100%;
-  /* height: inherit; */
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -126,9 +136,6 @@ button:hover {
   }
 }
 
-
-
-/* sliders  */
 .slick-slider {
   width: 100%;
 }
@@ -158,4 +165,4 @@ button:hover {
   border: 1px solid red;
   width: 100% !important;
   position: absolute !important;
-}
+} */

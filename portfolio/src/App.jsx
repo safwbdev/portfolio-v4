@@ -16,7 +16,7 @@ function App() {
    * ====
    * - Desc text format
    * - animated BG for Main Header
-   * - tailwindcss?
+   * - tailwindcss kinda REQIORED for RESPONSIVE
    * - animate contact area
    * - framer motion
    * - fix scroll bug on contact area

@@ -1,0 +1,37 @@
+.descBox,
+.techStack,
+.location {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    border: 1px solid;
+
+    .circularPortrait {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+    }
+
+    p {
+        line-height: 1.5;
+
+        span,
+        a {
+            cursor: pointer;
+            font-weight: bold;
+        }
+    }
+}

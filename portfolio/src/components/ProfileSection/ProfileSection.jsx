@@ -4,6 +4,7 @@ import { ContactArea } from '..';
 import { FaLinkedin, FaGithub, FaAddressCard } from "react-icons/fa6";
 import { ReactTyped } from "react-typed";
 import { usePortfolioContext } from '../../context/PortfolioContext';
+import DescBox from './DescBox';
 
 const ProfileSection = () => {
     const { profileData, defaultImg, openContacts, setOpenContacts } = usePortfolioContext()
@@ -39,27 +40,22 @@ const ProfileSection = () => {
                 <p className={style.tagLineText}>{profileData.tagline}</p>
 
             </section>
-            <section >
+            <section>
                 <div className={style.aboutMe}>
-                    <div className={style.desc}>
-                        <img src={defaultImg} alt="image" />
-                        <h1>Hello There!</h1>
-                        <p>{profileData.desc}</p>
-                    </div>
-                    <div className={style.techStack}>
-                        <img src={defaultImg} alt="image" />
-                        <h1>Tech Stack</h1>
-                        <p>{profileData.techStack}</p>
-                        <p>Click <a href='#skills'>HERE</a> to see what else I'm capable of</p>
-                    </div>
-                    <div className={style.location}>
-                        <img src={defaultImg} alt="image" />
-                        <h1>Where I'm at</h1>
-                        <p>{profileData.location}</p>
-                        <p>
-
-                            <span onClick={() => setOpenContacts(!openContacts)}>Contact me</span></p>
-                    </div>
+                    <DescBox
+                        title={'Hello There!'}
+                        image={defaultImg}
+                        text={profileData.desc} />
+                    <DescBox
+                        title={'Tech Stack'}
+                        image={defaultImg}
+                        text={profileData.techStack}
+                        linkText={<>Click <a href='#skills'>HERE</a> to see what else I'm capable of</>} />
+                    <DescBox
+                        title={`Where I'm at`}
+                        image={defaultImg}
+                        text={profileData.location}
+                        linkText={<span onClick={() => setOpenContacts(!openContacts)}>Contact me</span>} />
                 </div>
             </section>
             <ContactArea
