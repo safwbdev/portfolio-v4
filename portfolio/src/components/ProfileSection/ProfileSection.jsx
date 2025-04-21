@@ -50,7 +50,7 @@ const ProfileSection = () => {
                     <DescBox
                         title={'Hello There!'}
                         image={defaultImg}
-                        text={profileData.desc} />
+                        text={profileData.desc} isFirst />
                     <DescBox
                         title={'Tech Stack'}
                         image={logos}

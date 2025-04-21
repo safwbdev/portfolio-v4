@@ -1,11 +1,10 @@
-import CertificationSection from "./CertificationArea";
+import CertificationSection from "./CertificationSection/CertificationSection";
 import ContactArea from "./ContactArea/ContactArea";
-
-import EducationSection from "./EducationSection";
-import ExperienceSection from "./ExperienceSection";
+import EducationSection from "./EducationSection/EducationSection";
+import ExperienceSection from "./ExperienceSection/ExperienceSection";
 import ProfileSection from "./ProfileSection/ProfileSection";
-import ProjectsSection from "./ProjectsSection";
-import SkillsSection from "./SkillsSection";
+import ProjectsSection from "./ProjectSection/ProjectsSection";
+import SkillsSection from "./SkillsSection/SkillsSection";
 export {
     CertificationSection,
     ContactArea,
