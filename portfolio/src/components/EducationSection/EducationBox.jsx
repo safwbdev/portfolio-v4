@@ -11,7 +11,7 @@ const EducationBox = ({ data }) => {
                     className='bg-white className="h-[150px] w-[150px] object-cover rounded-full border-2 shadow-md"'
                 />
             </div>
-            <div className="p-5">
+            <div className="p-5 flex flex-col items-center justify-center text-center">
                 <h2 className="font-bold text-xl mb-2">{title}</h2>
                 <h3 className="font-extrabold text-xl mb-2">{school}</h3>
                 <p className='py-3'>{location}</p>

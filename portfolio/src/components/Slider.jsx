@@ -10,11 +10,35 @@ import './slider.css';
 
 // import required modules
 import { Pagination } from 'swiper/modules';
+import ProjectBox from './ProjectSection/ProjectBox';
+import ExperienceBox from './ExperienceSection/ExperienceBox';
+import EducationBox from './EducationSection/EducationBox';
+import CertificationBox from './CertificationSection/CertificationBox';
+import SkillBox from './SkillsSection/SkillBox';
 
-const Slider = () => {
+const Slider = ({ data, type }) => {
+
+    const GetBox = ({ boxData }) => {
+        switch (type) {
+            case 'clientPojects':
+                return <ProjectBox data={boxData} isClient />
+            case 'personalPojects':
+                return <ProjectBox data={boxData} />
+            case 'experience':
+                return <ExperienceBox data={boxData} />
+            case 'education':
+                return <EducationBox data={boxData} />
+            case 'certifications':
+                return <CertificationBox data={boxData} />
+            case 'skills':
+                return <SkillBox data={boxData} />
+            default:
+                break;
+        }
+    }
     return (
         <Swiper
-            slidesPerView={3}
+            slidesPerView={1}
             spaceBetween={30}
             pagination={{
                 clickable: true,
@@ -22,15 +46,11 @@ const Slider = () => {
             modules={[Pagination]}
             className="mySwiper"
         >
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-            <SwiperSlide>Slide 5</SwiperSlide>
-            <SwiperSlide>Slide 6</SwiperSlide>
-            <SwiperSlide>Slide 7</SwiperSlide>
-            <SwiperSlide>Slide 8</SwiperSlide>
-            <SwiperSlide>Slide 9</SwiperSlide>
+            {data.map((aData) => (
+                <SwiperSlide>
+                    <GetBox boxData={aData} />
+                </SwiperSlide>
+            ))}
         </Swiper>
     )
 }

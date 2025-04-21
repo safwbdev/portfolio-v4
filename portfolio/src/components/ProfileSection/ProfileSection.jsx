@@ -46,21 +46,23 @@ const ProfileSection = () => {
 
             </section>
             <section>
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
-                    <DescBox
-                        title={'Hello There!'}
-                        image={defaultImg}
-                        text={profileData.desc} isFirst />
-                    <DescBox
-                        title={'Tech Stack'}
-                        image={logos}
-                        text={profileData.techStack}
-                        linkText={<>Click <a href='#skills' className='inline-block bg-gray-200 rounded-full px-2 py-1 text-sm font-semibold text-gray-700 mx-1'>here</a> to see what else I'm capable of</>} />
-                    <DescBox
-                        title={`Where I'm at`}
-                        image={mas}
-                        text={profileData.location}
-                        linkText={<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 cursor-pointer' onClick={() => setOpenContacts(!openContacts)}>Contact me</span>} />
+                <div className="container">
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+                        <DescBox
+                            title={'Hello There!'}
+                            image={defaultImg}
+                            text={profileData.desc} isFirst />
+                        <DescBox
+                            title={'Tech Stack'}
+                            image={logos}
+                            text={profileData.techStack}
+                            linkText={<>Click <a href='#skills' className='inline-block bg-gray-200 rounded-full px-2 py-1 text-sm font-semibold text-gray-700 mx-1'>here</a> to see what else I'm capable of</>} />
+                        <DescBox
+                            title={`Where I'm at`}
+                            image={mas}
+                            text={profileData.location}
+                            linkText={<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 cursor-pointer' onClick={() => setOpenContacts(!openContacts)}>Contact me</span>} />
+                    </div>
                 </div>
             </section>
             <ContactArea

@@ -11,23 +11,30 @@ const ProjectsSection = () => {
     return (
         <>
             {clientProjects && (<section id="clientProjects">
-                <div className="client text-left mb-20">
-                    <h2 className='text-2xl md:text-2xl mb-4 font-bold'>Official Projects I worked on</h2>
-                    <div className='hidden md:grid grid-cols-1 md:grid-cols-3 gap-4'>
-                        {clientProjects.map((proj) => (<ProjectBox key={proj._id} data={proj} isClient />))}
+                <div className="container">
+                    <div className="client text-left mb-20">
+                        <h2 className='mb-4 text-3xl font-bold md:text-5xl mb-10'>Official Projects I worked on</h2>
+                        <div className='hidden md:grid grid-cols-1 md:grid-cols-3 gap-4'>
+                            {clientProjects.map((proj) => (<ProjectBox key={proj._id} data={proj} isClient />))}
 
-                    </div>
-                    <div className='md:hidden'>
-                        <Slider />
+                        </div>
+                        <div className='md:hidden'>
+                            <Slider type={'clientPojects'} data={clientProjects} />
+                        </div>
                     </div>
                 </div>
             </section>)}
             {personalProjects && (
                 <section id="personalProjects">
-                    <div className="text-left personal">
-                        <h2 className='text-2xl md:text-2xl mb-4 font-bold'>Personal Works</h2>
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
-                            {personalProjects.map((proj) => (<ProjectBox key={proj._id} data={proj} />))}
+                    <div className="container">
+                        <div className="text-left personal">
+                            <h2 className='mb-4 text-3xl font-bold md:text-5xl mb-10'>Personal Works</h2>
+                            <div className='hidden md:grid grid-cols-1 md:grid-cols-3 gap-4'>
+                                {personalProjects.map((proj) => (<ProjectBox key={proj._id} data={proj} />))}
+                            </div>
+                        </div>
+                        <div className='md:hidden'>
+                            <Slider type={'personalPojects'} data={personalProjects} />
                         </div>
                     </div>
                 </section>)}
