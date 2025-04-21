@@ -7,6 +7,7 @@ import { usePortfolioContext } from '../../context/PortfolioContext';
 import DescBox from './DescBox';
 import logos from '../../assets/logo.png'
 import mas from '../../assets/mas.png'
+import VantaBg from '../VantaBg';
 
 const ProfileSection = () => {
     const { profileData, defaultImg, openContacts, setOpenContacts } = usePortfolioContext()
@@ -14,6 +15,7 @@ const ProfileSection = () => {
 
     return profileData && (
         <>
+            <VantaBg />
             <section className={style.main}>
                 <div className={style.headerText}>
                     <h1 className='mb-4 text-4xl pl-8 font-bold leading-none md:text-8xl md:pl-0'>{profileData.fullName}</h1>

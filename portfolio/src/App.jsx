@@ -7,6 +7,7 @@ import {
   ProjectsSection,
   SkillsSection,
 } from './components'
+import VantaBg from "./components/VantaBg";
 import { usePortfolioContext } from "./context/PortfolioContext";
 
 function App() {
@@ -16,7 +17,6 @@ function App() {
    * ====
    * - Desc text format
    * - animate contact area
-   * - Unique BG for Main Header
    * - framer motion
    * - popups for project
    * - image gallery for project
@@ -35,10 +35,11 @@ function App() {
    * - UseContext for Loading status
    * - typed JS for Designation
    * - fix scroll bug on contact area
+   * - Unique BG for Main Header
+   * - animated BG for Main Header
    * 
    * PASS
    * ====
-   * - animated BG for Main Header
    * 
    * 
    * 
