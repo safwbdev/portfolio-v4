@@ -18,12 +18,12 @@ function App() {
    * - animate contact area
    * - Unique BG for Main Header
    * - framer motion
-   * - fix scroll bug on contact area
    * - popups for project
    * - image gallery for project
    * - mobile slider for experience, education & certifactions 
    * - Profile section to appear first on load
    * - up/down button
+   * - mobile UI fixs
    * 
    * 
    * DONE
@@ -34,6 +34,7 @@ function App() {
    * - layout of desv to include Desc, Tech Stack with link to skills & location
    * - UseContext for Loading status
    * - typed JS for Designation
+   * - fix scroll bug on contact area
    * 
    * PASS
    * ====
