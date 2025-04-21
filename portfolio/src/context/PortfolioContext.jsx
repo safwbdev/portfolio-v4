@@ -7,6 +7,8 @@ const portfolioContext = createContext(undefined);
 const PortfolioContext = (props) => {
     const [openContacts, setOpenContacts] = useState(false)
     const [profileData, setProfileData] = useState(null)
+    const [clientProjects, setClientProjects] = useState([])
+    const [personalProjects, setPersonalProjects] = useState([])
     const [defaultImg, setdefaultImg] = useState("https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg");
     const [isLoaded, setIsLoaded] = useState(false);
     const [skillData, setskillData] = useState([])
@@ -35,6 +37,12 @@ const PortfolioContext = (props) => {
             setdefaultImg(profileData.img);
         }
     }, [profileData]);
+    useEffect(() => {
+        if (projectData) {
+            setClientProjects(projectData.filter(val => val.type.includes('Client')));
+            setPersonalProjects(projectData.filter(val => !val.type.includes('Client')))
+        }
+    }, [projectData]);
 
     useEffect(() => {
         if (sLoading && pLoading && projectLoading && cLoading && eduLoading && expLoading) return;
@@ -72,7 +80,8 @@ const PortfolioContext = (props) => {
         setOpenContacts,
         skillData,
         setskillData,
-        projectData,
+        clientProjects,
+        personalProjects,
         certificationData,
         educationData,
         experienceData
@@ -87,7 +96,8 @@ const PortfolioContext = (props) => {
         setOpenContacts,
         skillData,
         setskillData,
-        projectData,
+        clientProjects,
+        personalProjects,
         certificationData,
         educationData,
         experienceData

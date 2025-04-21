@@ -20,50 +20,5 @@
     border: 1px solid;
     flex-direction: column;
 
-
-    &.main {
-      border-color: red;
-    }
-
-    &.projects {
-      border-color: blue;
-
-      img {
-        // display: none;
-      }
-    }
-
-    &.skills {
-      border-color: yellow;
-
-      img {
-        // display: none;
-      }
-    }
-
-    &.experience {
-      border-color: orange;
-
-      img {
-        // display: none;
-      }
-    }
-
-    &.education {
-      border-color: purple;
-
-      img {
-        // display: none;
-      }
-    }
-
-    &.certifications {
-      border-color: green;
-
-      img {
-        // display: none;
-      }
-    }
   }
-
 }

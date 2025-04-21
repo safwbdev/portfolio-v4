@@ -3,29 +3,21 @@ import style from "./../App.module.scss";
 import { usePortfolioContext } from '../context/PortfolioContext';
 
 const CertificationSection = () => {
-    const { certificationData, defaultImg } = usePortfolioContext()
+    const { certificationData } = usePortfolioContext();
+
     return certificationData && (
         <section className={style.certifications}>
-            <h4>Certification</h4>
-            <div direction="row" spacing={1}>
+            <h2 className='mb-4 text-3xl pl-8 font-bold md:text-4xl'>Certifications</h2>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
                 {certificationData.map((edu) => (
-                    <div key={edu._id}>
-                        <div>
-                            <img src={edu.img || defaultImg}
-                                className='className="h-[250px] w-[250px] object-cover rounded-full border-2 shadow-md"'
-                                alt="media"
-                            />
-                            <h2>
-                                {edu.title}
-                            </h2>
-                            <h5>
-                                {edu.school}
-                            </h5>
-                            <span>{edu.location}</span>
-                            <p>
-                                {edu.desc}
-                            </p>
+                    <div key={edu._id} className="max-w-sm rounded overflow-hidden shadow-lg border-1 rounded-md">
+                        <div className="p-5">
+                            <h2 className="font-bold text-xl mb-2">{edu.title}</h2>
+                            <h3 className="font-extrabold text-xl mb-2">{edu.school}</h3>
+                            <p className='py-3'>{edu.location}</p>
+                            <p>{edu.date}</p>
                         </div>
+
                     </div>
                 ))}
             </div>

@@ -12,34 +12,78 @@ import { usePortfolioContext } from '../context/PortfolioContext';
 // };
 
 const ProjectsSection = () => {
-    const { projectData, defaultImg } = usePortfolioContext();
+    const { clientProjects,
+        personalProjects, defaultImg } = usePortfolioContext();
 
-    return projectData && (
-        <section className={style.projects}>
-            <h4>Projects</h4>
-            <div className='grid grid-cols-1 md:grid-cols-4 gap-4'>
-                {/* <Slider {...settings}> */}
-                {projectData.map((proj) => (
-                    <div key={proj._id} className="max-w-sm rounded overflow-hidden shadow-lg border-1 rounded-md">
-                        <img src={proj.img[0] || defaultImg}
-                            className='className="h-[250px] w-[250px] object-cover rounded-full border-2 shadow-md"'
-                            alt="media"
-                        />
-                        <h2>
-                            {proj.type}
-                        </h2>
-                        <h5 variant="h5" component="div">
-                            {proj.title}
-                        </h5>
-                        <span sx={{ color: 'text.secondary', mb: 1.5 }}>{proj.stack}</span>
-                        <p>
-                            {proj.desc}
-                        </p>
+    return (
+        <>
+            {clientProjects && (<section id="clientProjects">
+                <div className="client text-left mb-20">
+                    <h2 className='text-2xl md:text-2xl mb-4 font-bold'>Official Projects I worked on</h2>
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+                        {/* <Slider {...settings}> */}
+                        {clientProjects.map((proj) => (
+                            <div key={proj._id} className="max-w-sm rounded overflow-hidden shadow-lg border-1 rounded-md">
+                                <img src={proj.img[0]}
+                                    className='className="h-[50px] w-full object-cover"'
+                                    alt="media"
+                                />
+                                <div className="p-5">
+                                    <h4 className='text-xl md:text-xl mt-4 font-bold'>{proj.title}</h4>
+                                    <p className=''>{proj.desc}</p>
+                                    <p className='my-5'>
+                                        {proj.demo && (<a
+                                            href={proj.demo}
+                                            className='inline-block bg-gray-200 rounded px-2 py-1 text-sm font-semibold text-gray-700 mx-1 my-1'
+                                            target='_blank'>
+                                            Demo</a>)}
+                                        {proj.github !== 'NA' && (<a
+                                            href={proj.github}
+                                            className='inline-block bg-gray-200 rounded px-2 py-1 text-sm font-semibold text-gray-700 mx-1 my-1'
+                                            target='_blank'>
+                                            Credits</a>)}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                ))}
-                {/* </Slider> */}
-            </div>
-        </section>
+                    {/* </Slider> */}
+                </div></section>)}
+            {personalProjects && (
+                <section id="personalProjects">
+                    <div className="text-left personal">
+                        <h2 className='text-2xl md:text-2xl mb-4 font-bold'>Personal Works</h2>
+                        <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+                            {/* <Slider {...settings}> */}
+                            {personalProjects.map((proj) => (
+                                <div key={proj._id} className="max-w-sm rounded overflow-hidden shadow-lg border-1 rounded-md">
+                                    <img src={proj.img[0]}
+                                        className='className="h-[50px] w-full object-cover"'
+                                        alt="media"
+                                    />
+                                    <div className="p-5">
+                                        <h4 className='text-xl md:text-xl mt-4 font-bold'>{proj.title}</h4>
+                                        <p className=''>{proj.desc}</p>
+                                        <p className='my-5'>
+                                            {proj.demo && (<a
+                                                href={proj.demo}
+                                                className='inline-block bg-gray-200 rounded px-2 py-1 text-sm font-semibold text-gray-700 mx-1 my-1'
+                                                target='_blank'>
+                                                Demo</a>)}
+                                            {proj.github && (<a
+                                                href={proj.github}
+                                                className='inline-block bg-gray-200 rounded px-2 py-1 text-sm font-semibold text-gray-700 mx-1 my-1'
+                                                target='_blank'>
+                                                Github</a>)}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        {/* </Slider> */}
+                    </div>
+                </section>)}
+        </>
     )
 }
 
