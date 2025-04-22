@@ -16,7 +16,7 @@ const AboutSection = ({ id }) => {
     return profileData && (
         <section id='about'>
             <div className="container">
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-4' ref={ref}>
+                <div className='flex flex-col items-center justify-center md:items-stretch md:grid md:grid-cols-3 md:gap-4' ref={ref}>
                     <DescBox
                         title={'Hello There!'}
                         image={defaultImg}
