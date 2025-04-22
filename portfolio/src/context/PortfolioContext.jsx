@@ -48,8 +48,10 @@ const PortfolioContext = (props) => {
 
     useEffect(() => {
         if (sLoading && pLoading && projectLoading && cLoading && eduLoading && expLoading) return;
+        if (pData.length === 0 && sData.length === 0 && projectData.length === 0 && certificationData.length === 0 && educationData.length === 0 && experienceData.length === 0) return;
         setIsLoaded(true)
-    }, [sLoading, pLoading, projectLoading, cLoading, eduLoading, expLoading]);
+    }, [sLoading, pLoading, projectLoading, cLoading, eduLoading, expLoading, sData,
+        pData, projectData, certificationData, educationData, experienceData]);
 
     useEffect(() => {
         let tempArr = [];

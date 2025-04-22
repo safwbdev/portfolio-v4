@@ -3,6 +3,7 @@ import {
   CertificationSection,
   EducationSection,
   ExperienceSection,
+  LoadingScreen,
   ProfileSection,
   ProjectsSection,
   SkillsSection,
@@ -59,11 +60,7 @@ function App() {
       <EducationSection />
       <CertificationSection />
     </div>
-  ) : (
-    <div className="loading">
-      <h1>LOADING...</h1>
-    </div>
-  )
+  ) : <LoadingScreen />
 }
 
 export default App
