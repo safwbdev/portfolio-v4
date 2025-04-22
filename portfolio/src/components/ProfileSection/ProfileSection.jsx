@@ -1,24 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import style from "./ProfileSection.module.scss";
 import { ContactArea } from '..';
 import { FaLinkedin, FaGithub, FaAddressCard } from "react-icons/fa6";
 import { ReactTyped } from "react-typed";
 import { usePortfolioContext } from '../../context/PortfolioContext';
-import DescBox from './DescBox';
-import logos from '../../assets/logo.png'
-import mas from '../../assets/mas.png'
 import VantaBg from '../VantaBg';
+import { useInView } from 'react-intersection-observer';
 
-const ProfileSection = () => {
-    const { profileData, defaultImg, openContacts, setOpenContacts } = usePortfolioContext()
+const ProfileSection = ({ id }) => {
+    const { profileData, setCurrentSection } = usePortfolioContext()
+    const [ref, inView] = useInView();
 
+    useEffect(() => {
+        if (inView) setCurrentSection(id);
+    }, [inView]);
 
     return profileData && (
         <>
             <VantaBg />
-            <section className={style.main}>
+            <section className={style.main} id='main'>
                 <div className={style.headerText}>
-                    <h1 className='mb-4 text-4xl pl-8 font-bold leading-none md:text-8xl md:pl-0'>{profileData.fullName}</h1>
+                    <h1 className='mb-4 text-4xl pl-8 font-bold leading-none md:text-8xl md:pl-0' ref={ref}>{profileData.fullName}</h1>
                     <ReactTyped
                         strings={profileData.designation}
                         typeSpeed={40}
@@ -44,26 +46,6 @@ const ProfileSection = () => {
                 </div>
                 <p className={style.tagLineText}>{profileData.tagline}</p>
 
-            </section>
-            <section>
-                <div className="container">
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
-                        <DescBox
-                            title={'Hello There!'}
-                            image={defaultImg}
-                            text={profileData.desc} isFirst />
-                        <DescBox
-                            title={'Tech Stack'}
-                            image={logos}
-                            text={profileData.techStack}
-                            linkText={<>Click <a href='#skills' className='inline-block bg-gray-200 rounded-full px-2 py-1 text-sm font-semibold text-gray-700 mx-1'>here</a> to see what else I'm capable of</>} />
-                        <DescBox
-                            title={`Where I'm at`}
-                            image={mas}
-                            text={profileData.location}
-                            linkText={<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 cursor-pointer' onClick={() => setOpenContacts(!openContacts)}>Contact me</span>} />
-                    </div>
-                </div>
             </section>
             <ContactArea
                 email={profileData.email}

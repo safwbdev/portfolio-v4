@@ -3,17 +3,20 @@ import ContactArea from "./ContactArea/ContactArea";
 import EducationSection from "./EducationSection/EducationSection";
 import ExperienceSection from "./ExperienceSection/ExperienceSection";
 import LoadingScreen from "./LoadingScreen";
+import AboutSection from "./ProfileSection/AboutSection";
 import ProfileSection from "./ProfileSection/ProfileSection";
-import ProjectsSection from "./ProjectSection/ProjectsSection";
+import ClientProjectsSection from "./ProjectSection/ClientProjectsSection";
+import PersonalProjectsSection from "./ProjectSection/PersonalProjectsSection";
 import SkillsSection from "./SkillsSection/SkillsSection";
-
 export {
     CertificationSection,
     ContactArea,
     EducationSection,
     ExperienceSection,
     ProfileSection,
-    ProjectsSection,
+    ClientProjectsSection,
+    PersonalProjectsSection,
     SkillsSection,
-    LoadingScreen
+    LoadingScreen,
+    AboutSection
 }

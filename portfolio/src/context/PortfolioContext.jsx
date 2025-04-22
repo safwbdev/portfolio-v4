@@ -14,6 +14,7 @@ const PortfolioContext = (props) => {
     const [expandProject, setExpandProject] = useState(false);
     const [skillData, setskillData] = useState([])
     const [currentProject, setCurrentProject] = useState(null)
+    const [currentSection, setCurrentSection] = useState(0)
 
     const { data: sData, loading: sLoading } = useFetch(`${API_URL}/skills`);
     const { data: pData, loading: pLoading } = useFetch(`${API_URL}/users`);
@@ -92,7 +93,9 @@ const PortfolioContext = (props) => {
         expandProject,
         setExpandProject,
         currentProject,
-        setCurrentProject
+        setCurrentProject,
+        currentSection,
+        setCurrentSection
     }), [
         profileData,
         setProfileData,
@@ -112,7 +115,9 @@ const PortfolioContext = (props) => {
         expandProject,
         setExpandProject,
         currentProject,
-        setCurrentProject
+        setCurrentProject,
+        currentSection,
+        setCurrentSection
     ])
 
     return (
