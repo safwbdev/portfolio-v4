@@ -19,7 +19,7 @@ const ProjectBox = ({ data, isClient }) => {
             </div>
             <div className="md:p-5">
                 <h4 className='text-xl md:text-xl md:mt-4 font-bold'>{title}</h4>
-                <p className='hidden md:block'>{desc}</p>
+                <p className='hidden md:block text-ellipsis overflow-hidden projectDesc px-5 md:p-0'>{desc}</p>
                 <button onClick={openProject} style={{ border: '1px solid white', margin: '1em 0', padding: '.5em', cursor: 'pointer' }}>More details</button >
                 <p className='my-5'>
                     {demo && (<a

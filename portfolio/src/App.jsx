@@ -22,11 +22,11 @@ function App() {
    * - Profile section to appear first on load
    * - up/down button
    * - mobile UI fixs
-   * - project modal layout on mobile
    * 
    * 
    * DONE
    * ====
+   * - project modal layout on mobile
    * - Hide desc on experience & Education
    * - close on bg click for project modal
    * - mobile slider for experience, education & certifactions 

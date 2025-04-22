@@ -20,8 +20,8 @@ const ProjectScreen = () => {
                 className={`bg-black/75 z-2 absolute w-full h-full top-0 left-0 items-center justify-center ${expandProject && currentProject ? 'flex' : 'hidden'}`}
                 onClick={closeScreen}>
             </div>
-            <div className="absolute bg-zinc-900 flex w-9/12 top-0 z-3 top-[30vh]">
-                <div className="gallery flex-1" >
+            <div className="absolute bg-zinc-900 flex w-9/12 top-0 z-3 flex-col md:flex-row top-[15vh] md:top-[30vh]">
+                <div className="gallery flex-1 " >
                     {/* GALLERY GOES HERE  */}
                     <img src={img} alt='preview' />
                 </div>
