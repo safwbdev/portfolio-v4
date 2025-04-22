@@ -27,18 +27,18 @@ const NavigationButtons = () => {
         }
     }
     return (
-        <>
-            <div className={`hidden md:flex absolute top-1/35 right-1/50 bg-white text-black font-bold py-4 px-4 rounded-full text-xl ${currentSection === 0 && 'hidden'}`}>
+        <div className='hidden md:flex'>
+            <div className={`absolute top-1/35 right-1/50 bg-white text-black font-bold py-4 px-4 rounded-full text-xl ${currentSection === 0 && 'hidden'}`}>
                 <a href={getAnchorLink(currentSection - 1)}>
                     <FaArrowUp />
                 </a>
             </div>
-            <div className={`hidden md:flex absolute bottom-1/35 right-1/50 bg-white text-black font-bold py-4 px-4 rounded-full text-xl ${currentSection === 7 && 'hidden'}`}>
+            <div className={`absolute bottom-1/35 right-1/50 bg-white text-black font-bold py-4 px-4 rounded-full text-xl ${currentSection === 7 && 'hidden'}`}>
                 <a href={getAnchorLink(currentSection + 1)}>
                     <FaArrowDown />
                 </a>
             </div>
-        </>
+        </div>
     )
 }
 
