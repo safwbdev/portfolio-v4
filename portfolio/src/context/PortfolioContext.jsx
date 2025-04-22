@@ -11,7 +11,9 @@ const PortfolioContext = (props) => {
     const [personalProjects, setPersonalProjects] = useState([])
     const [defaultImg, setdefaultImg] = useState("https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg");
     const [isLoaded, setIsLoaded] = useState(false);
+    const [expandProject, setExpandProject] = useState(false);
     const [skillData, setskillData] = useState([])
+    const [currentProject, setCurrentProject] = useState(null)
 
     const { data: sData, loading: sLoading } = useFetch(`${API_URL}/skills`);
     const { data: pData, loading: pLoading } = useFetch(`${API_URL}/users`);
@@ -84,7 +86,11 @@ const PortfolioContext = (props) => {
         personalProjects,
         certificationData,
         educationData,
-        experienceData
+        experienceData,
+        expandProject,
+        setExpandProject,
+        currentProject,
+        setCurrentProject
     }), [
         profileData,
         setProfileData,
@@ -100,7 +106,11 @@ const PortfolioContext = (props) => {
         personalProjects,
         certificationData,
         educationData,
-        experienceData
+        experienceData,
+        expandProject,
+        setExpandProject,
+        currentProject,
+        setCurrentProject
     ])
 
     return (

@@ -2,11 +2,11 @@ import React from 'react'
 import { usePortfolioContext } from '../../context/PortfolioContext';
 import Slider from '../Slider';
 import ProjectBox from './ProjectBox';
+import ProjectScreen from './ProjectScreen';
 
 
 const ProjectsSection = () => {
-    const { clientProjects,
-        personalProjects, defaultImg } = usePortfolioContext();
+    const { clientProjects, personalProjects } = usePortfolioContext();
 
     return (
         <>
@@ -27,6 +27,7 @@ const ProjectsSection = () => {
                         </div>
                     </div>
                 </div>
+                <ProjectScreen />
             </section>)}
             {personalProjects && (
                 <section id="personalProjects">

@@ -18,17 +18,17 @@ function App() {
    * - Desc text format
    * - animate contact area
    * - framer motion
-   * - popups for project
    * - image gallery for project
-   * - mobile slider for experience, education & certifactions 
    * - Profile section to appear first on load
    * - up/down button
    * - mobile UI fixs
-   * - resize on client projects
    * 
    * 
    * DONE
    * ====
+   * - mobile slider for experience, education & certifactions 
+   * - resize on client projects
+   * - popups for project
    * - tailwindcss kinda REQIORED for RESPONSIVE
    * - proper links for whatsapp, email
    * - slider for projects, skills,
