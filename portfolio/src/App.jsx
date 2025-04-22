@@ -20,14 +20,12 @@ function App() {
    * TODO
    * ====
    * - Profile section to appear first on load
-   * - mobile UI fixes
    * - Desc text format
-   * - animate contact area
-   * - framer motion
    * 
    * 
    * DONE
    * ====
+   * - mobile UI fixes
    * - up/down button
    * - image gallery for project
    * - project modal layout on mobile
@@ -48,6 +46,8 @@ function App() {
    * 
    * PASS
    * ====
+   * - framer motion
+   * - animate contact area
    * 
    * 
    * 

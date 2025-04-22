@@ -20,7 +20,7 @@ const ProfileSection = ({ id }) => {
             <VantaBg />
             <section className={style.main} id='main'>
                 <div className={style.headerText}>
-                    <h1 className='mb-4 text-4xl pl-8 font-bold leading-none md:text-8xl md:pl-0' ref={ref}>{profileData.fullName}</h1>
+                    <h1 className='mb-4 text-4xl pl-12 font-bold leading-none md:text-8xl md:pl-0' ref={ref}>{profileData.fullName}</h1>
                     <ReactTyped
                         strings={profileData.designation}
                         typeSpeed={40}
@@ -29,9 +29,9 @@ const ProfileSection = ({ id }) => {
                         loop
                     >
                         <input type="text" disabled
-                            className={`mb-4 text-3xl pl-8 font-extrabold md:text-7xl md:pl-0 uppercase ${style.designation}`} />
+                            className={`mb-4 text-3xl pl-12 font-extrabold md:text-7xl md:pl-0 uppercase ${style.designation}`} />
                     </ReactTyped>
-                    <h2 className='mb-4 text-3xl pl-8 font-bold md:text-6xl md:pl-0'>Developer</h2>
+                    <h2 className='mb-4 text-3xl pl-12 font-bold md:text-6xl md:pl-0 '>Developer</h2>
                 </div>
                 <div className={style.headerLinks}>
                     <a href={profileData.linkedin} target='_blank'>

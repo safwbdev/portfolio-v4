@@ -15,7 +15,7 @@ const CertificationSection = ({ id }) => {
     return certificationData && (
         <section className='flex text-left justify-center flex-col snap-center md:h-screen pt-10 md:pt-0 px-5 md:px-0' id='certifications'>
             <div className="container">
-                <h2 className='mb-4 text-3xl font-bold md:text-5xl mb-10' ref={ref}>Certifications</h2>
+                <h2 className='mb-4 text-3xl font-bold md:text-5xl mb-10 text-center md:text-left' ref={ref}>Certifications</h2>
                 <div className='hidden md:grid grid-cols-1 md:grid-cols-3 gap-4'>
                     {certificationData.map((edu) => (<CertificationBox key={edu._id} data={edu} />))}
                 </div>

@@ -30,7 +30,7 @@ const AboutSection = ({ id }) => {
                         title={`Where I'm at`}
                         image={mas}
                         text={profileData.location}
-                        linkText={<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 cursor-pointer' onClick={() => setOpenContacts(!openContacts)}>Contact me</span>} />
+                        linkText={<span className='invisible md:visible inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 cursor-pointer' onClick={() => setOpenContacts(!openContacts)}>Contact me</span>} />
                 </div>
             </div>
         </section>

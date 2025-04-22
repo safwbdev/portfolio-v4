@@ -16,10 +16,10 @@ const PersonalProjectsSection = ({ id }) => {
     }, [inView]);
 
     return personalProjects && (
-        <section id="personalProjects">
+        <section id="personalProjects" className="flex text-left justify-center flex-col snap-center md:h-screen pt-10 md:pt-0 px-5 md:px-0">
             <div className="container">
                 <div className="text-left personal">
-                    <h2 className='mb-4 text-3xl font-bold md:text-5xl mb-10' ref={ref}>Personal Works</h2>
+                    <h2 className='mb-4 text-3xl font-bold md:text-5xl mb-10 text-center md:text-left' ref={ref}>Personal Works</h2>
                     <div className='hidden md:grid grid-cols-1 md:grid-cols-1 gap-4'>
                         <Slider
                             type={'personalPojects'}
