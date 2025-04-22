@@ -16,7 +16,7 @@ const ExperienceBox = ({ data }) => {
                 <h2 className="font-bold text-xl mb-2">{company}</h2>
                 <h3 className="font-extrabold text-xl mb-2">{position}</h3>
                 <p className='py-3'>{yearStart} - {yearEnd}</p>
-                <p>{desc}</p>
+                <p className='hidden'>{desc}</p>
             </div>
         </div>
     )
