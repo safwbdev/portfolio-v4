@@ -13,7 +13,14 @@ const EducationSection = () => {
                     {educationData.map((edu) => (<EducationBox key={edu._id} data={edu} />))}
                 </div>
                 <div className='md:hidden'>
-                    <Slider type={'education'} data={educationData} />
+                    <Slider
+                        type={'education'}
+                        data={educationData}
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        navigation={false}
+                        loop={false}
+                    />
                 </div>
             </div>
         </section>

@@ -14,7 +14,14 @@ const ExperienceSection = () => {
                     {experienceData.map((exp) => (<ExperienceBox key={exp._id} data={exp} />))}
                 </div>
                 <div className='md:hidden'>
-                    <Slider type={'experience'} data={experienceData} />
+                    <Slider
+                        type={'experience'}
+                        data={experienceData}
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        navigation={false}
+                        loop={false}
+                    />
                 </div>
             </div>
         </section>

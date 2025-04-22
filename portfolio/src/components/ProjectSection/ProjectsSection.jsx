@@ -19,7 +19,11 @@ const ProjectsSection = () => {
 
                         </div>
                         <div className='md:hidden'>
-                            <Slider type={'clientPojects'} data={clientProjects} />
+                            <Slider type={'clientPojects'} data={clientProjects}
+                                slidesPerView={1}
+                                spaceBetween={60}
+                                navigation={true}
+                                loop={false} />
                         </div>
                     </div>
                 </div>
@@ -29,8 +33,15 @@ const ProjectsSection = () => {
                     <div className="container">
                         <div className="text-left personal">
                             <h2 className='mb-4 text-3xl font-bold md:text-5xl mb-10'>Personal Works</h2>
-                            <div className='hidden md:grid grid-cols-1 md:grid-cols-3 gap-4'>
-                                {personalProjects.map((proj) => (<ProjectBox key={proj._id} data={proj} />))}
+                            <div className='hidden md:grid grid-cols-1 md:grid-cols-1 gap-4'>
+                                <Slider
+                                    type={'personalPojects'}
+                                    data={personalProjects}
+                                    slidesPerView={4}
+                                    spaceBetween={60}
+                                    navigation={true}
+                                    loop={true}
+                                />
                             </div>
                         </div>
                         <div className='md:hidden'>

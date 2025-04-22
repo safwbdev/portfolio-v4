@@ -14,7 +14,14 @@ const SkillsSection = () => {
                     {skillData.map((skill) => (<SkillBox key={skill.type} data={skill} />))}
                 </div>
                 <div className='md:hidden'>
-                    <Slider type={'skills'} data={skillData} />
+                    <Slider
+                        type={'skills'}
+                        data={skillData}
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        navigation={false}
+                        loop={true}
+                    />
                 </div>
             </div>
         </section>

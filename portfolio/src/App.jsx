@@ -24,6 +24,7 @@ function App() {
    * - Profile section to appear first on load
    * - up/down button
    * - mobile UI fixs
+   * - resize on client projects
    * 
    * 
    * DONE

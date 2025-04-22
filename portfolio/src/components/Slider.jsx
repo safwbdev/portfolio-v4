@@ -5,18 +5,18 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 import './slider.css';
 
-// import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 import ProjectBox from './ProjectSection/ProjectBox';
 import ExperienceBox from './ExperienceSection/ExperienceBox';
 import EducationBox from './EducationSection/EducationBox';
 import CertificationBox from './CertificationSection/CertificationBox';
 import SkillBox from './SkillsSection/SkillBox';
 
-const Slider = ({ data, type }) => {
+const Slider = ({ data, type, slidesPerView, spaceBetween, navigation, loop, pagination }) => {
 
     const GetBox = ({ boxData }) => {
         switch (type) {
@@ -38,13 +38,15 @@ const Slider = ({ data, type }) => {
     }
     return (
         <Swiper
-            slidesPerView={1}
-            spaceBetween={30}
-            pagination={{
-                clickable: true,
-            }}
-            modules={[Pagination]}
             className="mySwiper"
+            loop={loop}
+            navigation={navigation}
+            modules={[Pagination, Navigation]}
+            pagination={{
+                clickable: pagination,
+            }}
+            slidesPerView={slidesPerView}
+            spaceBetween={spaceBetween}
         >
             {data.map((aData) => (
                 <SwiperSlide>

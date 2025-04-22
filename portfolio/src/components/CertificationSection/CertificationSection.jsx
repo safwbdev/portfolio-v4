@@ -14,7 +14,14 @@ const CertificationSection = () => {
                     {certificationData.map((edu) => (<CertificationBox key={edu._id} data={edu} />))}
                 </div>
                 <div className='md:hidden'>
-                    <Slider type={'certifications'} data={certificationData} />
+                    <Slider
+                        type={'certifications'}
+                        data={certificationData}
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        navigation={false}
+                        loop={false}
+                    />
                 </div>
             </div>
         </section>
