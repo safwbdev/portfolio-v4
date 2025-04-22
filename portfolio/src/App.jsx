@@ -1,4 +1,5 @@
 import style from "./App.module.scss";
+import { usePortfolioContext } from "./context/PortfolioContext";
 import {
   CertificationSection,
   EducationSection,
@@ -8,25 +9,23 @@ import {
   ProjectsSection,
   SkillsSection,
 } from './components'
-import VantaBg from "./components/VantaBg";
-import { usePortfolioContext } from "./context/PortfolioContext";
 
 function App() {
 
   /**
    * TODO
    * ====
+   * - Profile section to appear first on load
+   * - mobile UI fixs
    * - Desc text format
+   * - up/down button
    * - animate contact area
    * - framer motion
-   * - image gallery for project
-   * - Profile section to appear first on load
-   * - up/down button
-   * - mobile UI fixs
    * 
    * 
    * DONE
    * ====
+   * - image gallery for project
    * - project modal layout on mobile
    * - Hide desc on experience & Education
    * - close on bg click for project modal

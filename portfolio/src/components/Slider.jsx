@@ -19,6 +19,7 @@ import SkillBox from './SkillsSection/SkillBox';
 const Slider = ({ data, type, slidesPerView, spaceBetween, navigation, loop, pagination }) => {
 
     const GetBox = ({ boxData }) => {
+
         switch (type) {
             case 'clientPojects':
                 return <ProjectBox data={boxData} isClient />
@@ -32,6 +33,9 @@ const Slider = ({ data, type, slidesPerView, spaceBetween, navigation, loop, pag
                 return <CertificationBox data={boxData} />
             case 'skills':
                 return <SkillBox data={boxData} />
+            case 'gallery':
+                console.log(boxData);
+                return <img src={boxData} />
             default:
                 break;
         }

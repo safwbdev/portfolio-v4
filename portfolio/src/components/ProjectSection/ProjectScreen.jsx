@@ -1,5 +1,6 @@
 import React from 'react'
 import { usePortfolioContext } from '../../context/PortfolioContext';
+import Slider from '../Slider';
 
 const ProjectScreen = () => {
 
@@ -21,9 +22,15 @@ const ProjectScreen = () => {
                 onClick={closeScreen}>
             </div>
             <div className="absolute bg-zinc-900 flex w-9/12 top-0 z-3 flex-col md:flex-row top-[15vh] md:top-[30vh]">
-                <div className="gallery flex-1 " >
-                    {/* GALLERY GOES HERE  */}
-                    <img src={img} alt='preview' />
+                <div className="gallery flex-1">
+                    <Slider
+                        type={'gallery'}
+                        data={img}
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        navigation={true}
+                        loop={false}
+                    />
                 </div>
                 <div className="details flex-1 flex flex-col p-5" >
                     <h1 className='text-xl font-bold'>{title}</h1>

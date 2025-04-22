@@ -13,3 +13,7 @@
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
+
+.swiper-backface-hidden .swiper-slide {
+  width: 100% !important;
+}
