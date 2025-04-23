@@ -16,8 +16,6 @@ const PortfolioContext = (props) => {
     const [currentProject, setCurrentProject] = useState(null)
     const [currentSection, setCurrentSection] = useState(0)
 
-    console.log('test : ', API_URL);
-
     const { data: sData, loading: sLoading } = useFetch(`${API_URL}/skills`);
     const { data: pData, loading: pLoading } = useFetch(`${API_URL}/users`);
     const { data: projectData, projectLoading } = useFetch(`${API_URL}/projects`);
