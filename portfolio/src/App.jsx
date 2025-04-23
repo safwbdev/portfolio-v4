@@ -53,22 +53,18 @@ function App() {
 
   const { isLoaded, profileData } = usePortfolioContext()
 
-  return isLoaded ? (
+  return isLoaded && profileData ? (
     <div className={style.app}>
       <ProfileSection id={0} />
       <AboutSection id={1} />
-      {profileData && (
-        <>
-          <ClientProjectsSection id={2} />
-          <PersonalProjectsSection id={3} />
-          <SkillsSection id={4} />
-          <ExperienceSection id={5} />
-          <EducationSection id={6} />
-          <CertificationSection id={7} />
-          <ContactSection id={8} />
-          <NavigationButtons />
-        </>
-      )}
+      <ClientProjectsSection id={2} />
+      <PersonalProjectsSection id={3} />
+      <SkillsSection id={4} />
+      <ExperienceSection id={5} />
+      <EducationSection id={6} />
+      <CertificationSection id={7} />
+      <ContactSection id={8} />
+      <NavigationButtons />
     </div>
   ) : <LoadingScreen />
 }
