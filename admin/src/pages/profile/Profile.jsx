@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import useFetch from '../../hooks/useFetch';
 import { API_URL, EDIT } from '../../routes';
 import { Link } from 'react-router-dom';
-import { Button, Card, CardActions, CardContent, CardMedia, CircularProgress, Grid, TextField } from '@mui/material';
+import { Button, Card, CardActions, CardContent, CardMedia, CircularProgress, Grid, TextField, TextareaAutosize } from '@mui/material';
 import { userInputs } from '../../formSource';
 
 const Profile = () => {
@@ -21,8 +21,8 @@ const Profile = () => {
     }, [profileData])
 
 
-    const DisplayData = () => userInputs.map((input) => (
-        <Grid size={{ xs: 12, sm: 6 }} key={input.id} >
+    const DisplayData = () => userInputs.map((input) => input.label !== "Desc" ? (
+        < Grid size={{ xs: 12, sm: 6 }} key={input.id} >
             <TextField
                 id={input.id}
                 label={input.label || ''}
@@ -32,8 +32,18 @@ const Profile = () => {
                 fullWidth
                 disabled
                 type={input.type} />
-        </Grid>
-    ))
+        </Grid >
+    ) : (< Grid size={{ xs: 12, sm: 6 }} key={input.id} >
+        <TextareaAutosize
+            label={input.label || ''}
+            minRows={3}
+            variant="outlined"
+            placeholder={data[input.label]}
+            value={profileData[input.id]}
+            fullWidth
+            disabled
+        />
+    </Grid >))
 
     return loading ? (<CircularProgress />) : profileData && (
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import parse from 'html-react-parser';
 
 const DescBox = ({ title, text, image, linkText, isFirst }) => (
     <div className="max-w-sm rounded overflow-hidden shadow-lg border-1 rounded-md mb-3">
@@ -7,7 +8,7 @@ const DescBox = ({ title, text, image, linkText, isFirst }) => (
         </div>
         <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">{title}</div>
-            <p className="text-gray-300 text-base">{text}</p>
+            <div className="text-gray-300 text-base">{parse(text)}</div>
             {linkText && (<p className="text-gray-300 text-base pt-5">{linkText}</p>)}
         </div>
     </div>

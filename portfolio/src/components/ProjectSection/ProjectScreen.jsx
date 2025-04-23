@@ -1,7 +1,7 @@
 import React from 'react'
 import { usePortfolioContext } from '../../context/PortfolioContext';
+import parse from 'html-react-parser';
 import Slider from '../Slider';
-
 const ProjectScreen = () => {
 
     const { expandProject, setExpandProject, currentProject, setCurrentProject } = usePortfolioContext();
@@ -34,7 +34,7 @@ const ProjectScreen = () => {
                 </div>
                 <div className="details flex-1 flex flex-col p-5" >
                     <h1 className='text-xl font-bold'>{title}</h1>
-                    <p className='text-left py-6'>{desc}</p>
+                    <p className='text-left py-6'>{parse(desc)}</p>
                     <p className='text-left'>
                         {demo && (<a
                             href={demo}

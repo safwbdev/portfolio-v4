@@ -20,12 +20,12 @@ function App() {
    * TODO
    * ====
    * - Profile section to appear first on load
-   * - Desc text format
    * 
    * 
    * DONE
    * ====
    * - mobile UI fixes
+   * - Desc text format
    * - up/down button
    * - image gallery for project
    * - project modal layout on mobile
