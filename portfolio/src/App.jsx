@@ -1,7 +1,6 @@
-import { useEffect } from "react";
 import style from "./App.module.scss";
-import { usePortfolioContext } from "./context/PortfolioContext";
 import NavigationButtons from "./components/NavigationButtons";
+import { usePortfolioContext } from "./context/PortfolioContext";
 import {
   AboutSection,
   CertificationSection,
