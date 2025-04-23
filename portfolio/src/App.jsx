@@ -5,6 +5,7 @@ import {
   AboutSection,
   CertificationSection,
   ClientProjectsSection,
+  ContactSection,
   EducationSection,
   ExperienceSection,
   LoadingScreen,
@@ -63,6 +64,7 @@ function App() {
       <ExperienceSection id={5} />
       <EducationSection id={6} />
       <CertificationSection id={7} />
+      <ContactSection id={8} />
       <NavigationButtons />
     </div>
   ) : <LoadingScreen />
