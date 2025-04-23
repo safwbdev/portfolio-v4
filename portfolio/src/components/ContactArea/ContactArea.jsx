@@ -8,7 +8,7 @@ const ContactArea = ({ linkedin, github, phone, email }) => {
 
     return (
         <div
-            className={`fixed bottom-2/100 left-1/2 w-full flex justify-center`}
+            className={`fixed bottom-2/100 left-1/2 w-fit flex justify-center z-2`}
             style={{ transform: 'translate(-50%, -50%)' }}
         >
             <div className={`flex justify-center items-center fit-content`}>
