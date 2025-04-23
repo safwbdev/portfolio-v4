@@ -19,11 +19,11 @@ function App() {
   /**
    * TODO
    * ====
-   * - Profile section to appear first on load
-   * 
+   * - project modal layout on mobile 
    * 
    * DONE
    * ====
+   * - Profile section to appear first on load
    * - mobile UI fixes
    * - Desc text format
    * - up/down button
@@ -49,23 +49,26 @@ function App() {
    * - framer motion
    * - animate contact area
    * 
-   * 
-   * 
   */
-  const { isLoaded } = usePortfolioContext()
+
+  const { isLoaded, profileData } = usePortfolioContext()
 
   return isLoaded ? (
     <div className={style.app}>
       <ProfileSection id={0} />
       <AboutSection id={1} />
-      <ClientProjectsSection id={2} />
-      <PersonalProjectsSection id={3} />
-      <SkillsSection id={4} />
-      <ExperienceSection id={5} />
-      <EducationSection id={6} />
-      <CertificationSection id={7} />
-      <ContactSection id={8} />
-      <NavigationButtons />
+      {profileData && (
+        <>
+          <ClientProjectsSection id={2} />
+          <PersonalProjectsSection id={3} />
+          <SkillsSection id={4} />
+          <ExperienceSection id={5} />
+          <EducationSection id={6} />
+          <CertificationSection id={7} />
+          <ContactSection id={8} />
+          <NavigationButtons />
+        </>
+      )}
     </div>
   ) : <LoadingScreen />
 }
