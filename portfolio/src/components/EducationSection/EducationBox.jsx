@@ -4,7 +4,7 @@ const EducationBox = ({ data }) => {
     const { img, title, school, location } = data
     return (
         <div className="max-w-sm rounded overflow-hidden shadow-lg border-1 rounded-md">
-            <div className="flex justify-center pt-6 hidden md:flex">
+            <div className="flex justify-center pt-6  px-30 md:px-0">
                 <img
                     src={img}
                     alt="media"
