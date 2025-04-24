@@ -23,7 +23,11 @@ const ProjectBox = ({ data, isClient }) => {
                 <div className='hidden md:block text-ellipsis overflow-hidden projectDesc px-5 md:p-0'>
                     {parse(desc)}
                 </div>
-                <button onClick={openProject} style={{ border: '1px solid white', margin: '1em 0', padding: '.5em', cursor: 'pointer' }}>More details</button >
+                <button
+                    onClick={openProject}
+                    className='border-1 my-[1em] mx-0 p-[0.5em] cursor-pointer rounded'>
+                    More details
+                </button>
                 <p className='my-5'>
                     {demo && (<a
                         href={demo}

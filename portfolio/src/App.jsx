@@ -19,10 +19,11 @@ function App() {
   /**
    * TODO
    * ====
-   * - project modal layout on mobile 
+   * - REDUCE LOAD TIME
    * 
    * DONE
    * ====
+   * - project modal layout on mobile 
    * - Profile section to appear first on load
    * - mobile UI fixes
    * - Desc text format

@@ -2,6 +2,8 @@ import React from 'react'
 import { usePortfolioContext } from '../../context/PortfolioContext';
 import parse from 'html-react-parser';
 import Slider from '../Slider';
+import { HiXCircle } from "react-icons/hi";
+
 const ProjectScreen = () => {
 
     const { expandProject, setExpandProject, currentProject, setCurrentProject } = usePortfolioContext();
@@ -17,11 +19,14 @@ const ProjectScreen = () => {
 
     return (
         <>
+            {/* BACKDROP */}
             <div
                 className={`bg-black/75 z-2 absolute w-full h-full top-0 left-0 items-center justify-center ${expandProject && currentProject ? 'flex' : 'hidden'}`}
                 onClick={closeScreen}>
             </div>
-            <div className="absolute bg-zinc-900 flex w-9/12 top-0 z-3 flex-col md:flex-row top-[15vh] md:top-[30vh]">
+            {/* MODAL  */}
+            <div className="absolute bg-zinc-900 flex z-3 flex-col left-0 md:left-45 top-0 md:w-9/12 md:flex-row md:top-[30vh]">
+                <HiXCircle className='absolute z-4 right-[0.3em] top-[0.3em] text-4xl cursor-pointer' onClick={closeScreen} />
                 <div className="gallery flex-1">
                     <Slider
                         type={'gallery'}
