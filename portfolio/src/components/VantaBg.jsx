@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import WAVES from 'vanta/src/vanta.waves'
+
 const VantaBg = () => {
 
     useEffect(() => {
@@ -22,17 +23,8 @@ const VantaBg = () => {
 
     return (
         <div
-            className='bg'
-            id='vanta'
-            style={{
-                // border: '1px solid red',
-                // position: 'absolute',
-                height: '100vh',
-                width: '100%',
-                zIndex: '-1',
-                position: 'relative',
-                top: '100%'
-            }}></div>
+            className={`relative z-[-1] h-full w-full top-[100%]`}
+            id='vanta' />
 
     )
 }
