@@ -3,13 +3,12 @@ export const API_URL = `${import.meta.env.VITE_API_URL}`;
 export const CLOUDINARY_ID = import.meta.env.VITE_CLOUDINARY
 
 // Fetch 
-export const ROOM_PATH = `${API_URL}/rooms`;
-export const HOTEL_PATH = `${API_URL}/hotels`;
-
-// axios 
-export const LOGIN_PATH = `${API_URL}/auth/login`;
-export const REGISTER_PATH = `${API_URL}/auth/register`;
-export const USER_PATH = `${API_URL}/users`;
+export const PROFILE_PATH = `${API_URL}/users`;
+export const SKILL_PATH = `${API_URL}/skills`;
+export const PROJECT_PATH = `${API_URL}/projects`;
+export const CERTIFICATION_PATH = `${API_URL}/certifications`;
+export const EDUCATION_PATH = `${API_URL}/education`;
+export const EXPERIENCE_PATH = `${API_URL}/experience`;
 
 // Cloudinary 
 export const IMG_UPLOAD_PATH = `https://api.cloudinary.com/v1_1/${CLOUDINARY_ID}/image/upload`;

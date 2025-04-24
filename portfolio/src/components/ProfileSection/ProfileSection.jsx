@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer';
 import SectionComponent from '../SectionComponent';
 
 const ProfileSection = ({ id }) => {
-    const { profileData, setCurrentSection } = usePortfolioContext()
+    const { profileData, setCurrentSection } = usePortfolioContext();
     const [ref, inView] = useInView();
 
     useEffect(() => {
@@ -21,7 +21,6 @@ const ProfileSection = ({ id }) => {
         <>
             <VantaBg />
             <SectionComponent id={'main'} noContainer>
-
                 <div className={`flex flex-col text-left`}>
                     <h1 className='mb-4 text-3xl pl-8 font-bold leading-none md:text-8xl md:pl-0' ref={ref}>{profileData.fullName}</h1>
                     <ReactTyped
