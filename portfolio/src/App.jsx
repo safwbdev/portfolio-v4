@@ -52,9 +52,9 @@ function App() {
    * 
   */
 
-  const { isLoaded, profileData } = usePortfolioContext()
+  const { isLoaded } = usePortfolioContext()
 
-  return isLoaded && profileData ? (
+  return isLoaded ? (
     <div className={style.app}>
       <ProfileSection id={0} />
       <AboutSection id={1} />
