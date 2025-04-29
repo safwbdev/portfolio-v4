@@ -26,11 +26,11 @@ const ContactSection = ({ id }) => {
                     style={{ transform: 'translate(-50%, -50%)' }}>
                     Click here to see how
                 </h2>
-                <FaArrowDown
-                    className={`${currentSection === 8 ? 'flex' : 'hidden'} font-bold text-6xl fixed bottom-10/100 md:bottom-7/100 left-1/2 w-fit flex justify-center z-2`}
-                    style={{ transform: 'translate(-50%, -50%)' }} />
+                <span className={`${currentSection === 8 ? 'flex' : 'hidden'} font-bold text-6xl fixed bottom-10/100 md:bottom-7/100 left-1/2 w-fit animate-bounce justify-center z-2`}>
+                    <FaArrowDown style={{ transform: 'translateX(-50%)' }} />
+                </span>
             </div>
-        </SectionComponent>
+        </SectionComponent >
     )
 }
 
