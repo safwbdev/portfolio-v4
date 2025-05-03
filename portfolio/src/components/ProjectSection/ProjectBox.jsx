@@ -13,10 +13,7 @@ const ProjectBox = ({ data, isClient }) => {
     return (
         <div className="max-w-sm rounded overflow-hidden shadow-lg border-1 rounded-md">
             <div className="p-9 md:p-0">
-                <img src={img[0]}
-                    className='className="h-[50px] w-full object-cover'
-                    alt="media"
-                />
+                <img src={img[0]} alt="media" />
             </div>
             <div className="md:p-5">
                 <h4 className='text-xl md:text-xl md:mt-4 font-bold'>{title}</h4>

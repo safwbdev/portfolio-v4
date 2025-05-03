@@ -17,3 +17,37 @@
 .swiper-backface-hidden .swiper-slide {
   width: 100% !important;
 }
+
+.swiper-slide .projectDesc {
+  text-align: left;
+}
+
+.swiper-slide h4 {
+  text-align: left;
+}
+
+@media (max-width:720px) {
+
+  /* smartphones, iPhone, portrait 480x320 phones */
+  .swiper-slide .projectDesc {
+    text-align: center;
+  }
+
+  .swiper-slide h4 {
+    text-align: center;
+  }
+}
+
+.swiper-slide .projectDesc p {
+  font-size: .9em !important;
+}
+
+
+@media (min-width:720px) {
+  .swiper-slide img {
+    height: 15em !important;
+    width: 350px !important;
+    object-fit: cover !important;
+    object-position: 1 0;
+  }
+}
