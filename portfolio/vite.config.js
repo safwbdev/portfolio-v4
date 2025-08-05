@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
   const API_URL = `${env.VITE_API_URL ?? 'http://localhost:8800'}`;
+  // const STATIC_MODE = `${env.VITE_STATIC_MODE}`;
   const PORT = `${env.VITE_PORT ?? '5173'}`;
 
   return {

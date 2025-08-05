@@ -1,4 +1,5 @@
 export const API_URL = `${import.meta.env.VITE_API_URL}`;
+export const STATIC_MODE = `${import.meta.env.VITE_STATIC_MODE}`;
 // export const API_URL = `http://localhost:8800/api`;
 export const CLOUDINARY_ID = import.meta.env.VITE_CLOUDINARY
 

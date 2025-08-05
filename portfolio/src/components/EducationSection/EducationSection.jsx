@@ -6,23 +6,23 @@ import { useInView } from "react-intersection-observer";
 import SectionComponent from '../SectionComponent';
 
 const EducationSection = ({ id }) => {
-    const { educationData, setCurrentSection } = usePortfolioContext()
+    const { educationState, setCurrentSection } = usePortfolioContext()
     const [ref, inView] = useInView();
 
     useEffect(() => {
         if (inView) setCurrentSection(id);
     }, [inView]);
 
-    return educationData && (
+    return educationState && (
         <SectionComponent id={'education'}>
             <h2 className='mb-4 text-3xl font-bold md:text-5xl mb-10 text-center md:text-left' ref={ref}>Education</h2>
             <div className='hidden md:grid grid-cols-1 md:grid-cols-3 gap-4'>
-                {educationData.map((edu) => (<EducationBox key={edu._id} data={edu} />))}
+                {educationState.map((edu) => (<EducationBox key={edu._id} data={edu} />))}
             </div>
             <div className='md:hidden'>
                 <Slider
                     type={'education'}
-                    data={educationData}
+                    data={educationState}
                     slidesPerView={1}
                     spaceBetween={30}
                     navigation={true}
